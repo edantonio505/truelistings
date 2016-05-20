@@ -1,0 +1,491 @@
+body, input[type="text"], select, label, textarea{
+	color: #696969;
+	font-weight: 200;
+	font-family: 'Kanit', sans-serif;
+}
+
+body, html{
+	overflow-x: hidden; 
+    overflow-y: auto;
+}
+
+body {
+	background-color: #f6f6f6;
+	/*background-color: #F0FFEC;*/
+}
+
+.alertMessage {
+	color: #85d732;
+	display: none;
+	font-family: 'Kanit', sans-serif;
+}
+.minSlider,.maxSlider {
+	color: #85d732;
+	font-weight: bold;
+	font-size: 25px;
+	/*text-shadow: 0px 0px 2px white;*/
+}
+.priceRange, .minSlider, .maxSlider{
+	text-align: center;
+}
+.dollarSign {
+	font-size: 25px;
+}
+/*--------------------------------------------------------------*/
+.pageLoader {
+	background-color:rgba(255,255,255,0.5);
+    min-height: 100%;
+    min-width: 1024px;
+    
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: 100%;
+    
+    /* Set up positioning */
+    z-index: 109;
+    position: fixed;
+    top: 30;
+    left: 0;
+
+    overflow-x: hidden; 
+    overflow-y: auto;
+}
+
+.pageLoader img {
+	height:100px;
+	width: auto;
+	position:absolute;
+	top:45%;
+	left:45%;
+}
+
+
+
+
+/*-------------------------------------------------------------*/
+.landing-box{
+	border-color: transparent;
+}
+.landing-box label {
+	font-weight: 200 !important;
+}
+.landing-text{
+	color:white;
+	text-align: center;
+	text-shadow: 0px 1px 1px rgba(128,128,128, 0.3);
+}
+
+p.landing-text {
+	font-size:40px;
+	text-align: center;
+}
+
+#homeTextSearch{
+	font-size: 32px;
+	font-weight: 200 !important;
+}
+
+.header {
+ 	text-align: center;
+ 	font-family: 'Kanit', sans-serif;
+ }
+ h4.grey-text.header {
+ 	color:#2199e8;
+ 	font-size: 30px;
+ }
+ .logo {
+ 	font-family: 'Raleway', sans-serif;
+ 	font-weight: lighter;
+ 	font-size: 30px;
+ }
+
+ .logo img {
+ 	height: 26px;
+ 	width: auto;
+ 	position:relative;
+ 	top: -4px;
+ }
+
+ .logo.home {
+ 	font-size: 45px;
+ }
+.queryResults {
+	min-height:40px; 
+	max-width:1170px;
+	min-width: 300px; 
+	margin:0 auto; 
+	margin-bottom:30px; 
+	text-align: center;
+	color: white;
+	border-width: 1px;
+	/*background-color: #DEF2F1;*/
+	border-radius: 4px;
+	/*box-shadow: 0px 2px 1px #e0e0e0;*/
+}
+.queryResults label {
+	color:#999999;
+	font-size: 17px;
+	/*text-shadow: 0px 1px 1px #777777;*/
+}
+/*--------------------------------------------------------------------------*/
+
+
+/*-----------------------------input style------------------------------------*/
+.queryResults input[type=text], .queryResults select{
+	outline: none;
+	border-style: solid;
+	border-width:1px;
+	border-color: #bbd0e5;
+	border-radius: 3px;
+	color:#999999;
+	background-color:white;
+}
+.queryResults  input[type=text]:focus,.queryResults select :focus{
+	box-shadow: 0 0 5 #bdbdbd !important;
+}
+
+
+.landing-box input[type=text], .landing-box select{
+	outline: none;
+	border-style: solid;
+	border-width: 0px;
+	border-color: transparent;
+	border-radius: 3px;
+}
+.landing-box  input[type=text]:focus,.landing-box select :focus{
+	box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+	border: 1px solid rgba(81, 203, 238, 1);
+}
+input[type=text], select, input[type="email"], input[type="password"]{
+	-webkit-transition: all 0.30s ease-in-out;
+	-moz-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;
+	outline: none;
+	border-style: solid;
+	border-width: 1px;
+	border-color:#dddddd;
+	border-radius: 3px;
+}
+input[type=text]:focus, select :focus, input[type="email"]:focus, input[type="password"]:focus{
+	box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+	border: 1px solid rgba(81, 203, 238, 1);
+}
+/*-----------------------------input style------------------------------------*/
+
+
+
+.matchStyle {
+ 	color: white !important;
+ 	float:right;
+ 	margin-right: 10px;
+ 	margin-top: 2px;
+ 	font-family: 'Kanit', sans-serif;
+ }
+ .searchQuery {
+ 	color:#bdbdbd;
+ }
+
+.alerts {
+	width:950px; 
+	margin: 0 auto; 
+	margin-top:10px;
+	border-radius: 5px;
+	border-style: none;
+}
+
+
+.menuAvatar {
+	height: 20px;
+	width: 20px;
+	border-radius: 50px;
+}
+#realEstateMenu {
+	background-color:#12d4b4;
+	position: fixed;
+	top:0;
+	width:100%;
+	z-index: 110;
+	min-height: 40px;
+    border-bottom: thin solid rgba(255, 255, 255, 0.3);
+    border-top: 0px none transparent !important;
+}
+#realEstateMenu .menu {
+	background-color:#12d4b4;
+}
+#realEstateMenu .menu a {
+	color:white;
+}
+.menu-text {
+	padding: 0px !important;
+	margin-top:15px;
+}
+.top-bar-right {
+	margin-right:120px;
+}
+.top-bar-right a{
+	color: #999999 !important;
+	font-weight: 200 !important;
+}
+
+.top-bar-left {
+	margin-left: 120px;
+}
+
+.menu.transition {
+	background-color:white !important;
+}
+.ui.dropdown.item {
+	color: white;
+}
+.loggedout a{
+	color: white !important;
+}
+
+.log-in-form {
+  border: 1px solid #bbd0e5;
+  border-radius: 4px; 
+  padding: 1rem;
+
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.log-in-form h4 {
+	padding-left: 10px;
+}
+.text-center {
+	text-align: center;
+	font-family: 'Kanit', sans-serif;
+}
+
+.log-in-form label {
+	width:100%;
+	display: block;
+	padding-left:10px;
+	padding-right: 10px;
+}
+
+.log-in-form p {
+	padding-left: 10px;
+}
+
+.matchesgq {
+	color: #41d246;
+}
+
+/*.new {
+	margin-left: 50px;
+}*/
+
+.results ul{
+	list-style-type: none;
+	font-size: 13px;
+}
+
+
+ .has-error {
+ 	color:#D31616;
+ }
+
+
+ .grey-text {
+ 	color: #c0c0c0;
+ }
+
+ .container {
+ 	max-width:950px; 
+ 	min-height: auto; 
+ 	margin: 0 auto; 
+ 	margin-top: 70px;
+ }
+ .center {
+ 	text-align: center;
+ }
+
+.container-results {
+	margin-top: 30px;
+}
+
+ .boxes {
+ 	border-color: #dbdbdb;
+ 	box-shadow: 0px 0px 7px #e9e9e9;
+
+ }
+ .filter-box {
+ 	border-style:solid; 
+ 	border-width:1px;
+ 	border-color: #dbdbdb;
+ 	border-radius: 6px;
+ 	background-color:#e9e9e9;
+ }
+ .filter-box h5 {
+ 	padding-left: 10px;
+ }
+.filter-box .filter-container .button {
+	margin-bottom: 1px;
+}
+
+ .welcome-search-box {
+ 	border-style:solid; 
+ 	border-width:1px; 
+ 	max-width:950px;
+ 	min-width: 300px;
+ 	border-radius: 4px;  
+ 	background-color: rgba(255,255,255,0.8);
+/* 	text-align: center;*/
+ }
+
+ .welcome-search-box label {
+ 	font-size: 18px;
+ 	font-weight: 100;
+ }
+
+ .rounded {
+ 	border-radius: 6px;
+ }
+
+ .new-listing {
+ 	border-style:solid; 
+ 	border-width:1px; 
+ 	background-color: white;
+ 	margin-top: 30px !important;
+ }
+
+ .selected {
+ 	background-color:#194570;
+ }
+
+ #description-form {
+ 	height:120px;
+ }
+ .callout1 {
+ 	background-color: white;
+ 	margin-bottom: 20px;
+ 	border-color:#E3E3E3;
+ 	border-style: solid;
+ 	border-width: 1px;
+ }
+ .callout1 .title {
+ 	margin-bottom: 0px !important;
+ 	font-size: 20px;
+ 	z-index: 100;
+ 	margin-left:20px;
+ 	position: relative;
+ 	top: 20px;
+ }
+ .callout1 img{
+ 	padding-bottom: 17px;
+ }
+
+ .callout1 p {
+ 	margin-left:10px;
+ }
+
+ .top-space {
+ 	margin-top: 70px;
+ }
+
+ /*----------------------------------*/
+ .selectedRow {
+ 	background-color:#9fe79f  !important;
+ 	color:white;
+ }
+ .selectableRow.SellingPointIncomplete {
+ 	background-color:  #ff907b !important;
+ 	color:white;
+ 	border-style: solid;
+ 	border-width: 1px;
+ 	border-color: white;
+ }
+
+ .selectedRow.SellingPointIncomplete {
+ 	background-color: #ff6b6b !important;
+ }
+ .selectableRow {
+ 	cursor:pointer;
+ }
+
+ .broker-dashboard-content {
+ 	margin-top: 70px;
+ }
+
+ .littleredsquare {
+ 	background-color:#ff907b;
+ 	height:20px;
+ 	width:20px;
+ 	border-radius: 3px;
+ 	float:left;
+ 	margin-right: 10px;
+ }
+
+ .whiteButtonSquare {
+ 	height:50px;
+ 	width: 50px;
+ 	background-color: rgba(255, 255, 255, 0.4);
+ 	border-radius: 8px;
+ 	margin:0 auto;
+ }
+
+ .whiteButtonSquare i {
+ 	font-size: 40px;
+ 	color:white;
+ 	position:relative;
+ 	top:5px;
+ }
+
+ .whiteButtonSquare img {
+ 	height: 40px;
+ 	width: 40px;
+ 	margin:5px;
+ }
+
+ .buttonDashboard a span{
+ 	color: white !important;
+ 	font-size: 13px;
+ 	font-weight: normal;
+ }
+ .buttonDashboard {
+ 	margin-top: 10px;
+ 	text-align: center !important;
+ 	line-height: 12px;
+ }
+
+ .buttonDashboard span {
+ 	font-size: 12px;
+ 	color: white;
+ }
+
+ a.button, button.button {
+ 	border-radius: 5px;
+ }
+
+ .button {
+ 	border-radius: 5px !important;
+ }
+ 
+ .sort.expanded.button.filter {
+ 	border-radius: 0px !important;
+ }
+
+ #logoHome {
+ 	height: 40px; 
+ 	position: relative; 
+ 	top: -8px;
+ 	left: -5px;
+ }
+
+ .dropzone  {
+ 	border-radius: 8px;
+ 	background-color: #e9e9e9 !important;
+ 	border: 0px none transparent !important;
+ }
+
+ .dz-preview {
+ 	border-radius: 20px;
+ }
+
+ .form-title {
+ 	text-align: center;
+ 	font-family: 'Kanit', sans-serif;
+ 	font-weight: 200;
+ }
