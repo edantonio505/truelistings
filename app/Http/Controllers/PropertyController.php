@@ -71,6 +71,7 @@ class PropertyController extends Controller
 	public function saveOnTheFly(Request $request)
 	{
 		$p = Property::findOrFail($request->input('property_id'));
+
 		$p->updateSellingPoint($request);
 		if($p->checkIfHasSellingPoints() == "SellingPointIncomplete"){
 			$this->delete_document($p);
@@ -116,7 +117,10 @@ class PropertyController extends Controller
 	public function deleteProperty(Request $request)
 	{	
 		$property = Property::findOrFail($request->input('id'));
-		$this->delete_document($property);
+		if($request->input('indexed') != 'false')
+		{
+			$this->delete_document($property);
+		}
 		$property->delete();
 		return 'deleted';
 	}

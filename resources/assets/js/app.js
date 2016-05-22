@@ -267,12 +267,19 @@ $('.deleteProperty').click(function(){
   var id = $(this).attr('property-id');
   var token = $(this).attr('token');
   var property_row = $('tbody').find("[data-id='" + id + "']");
+  var indexed = false;
+
+  if(property_row.hasClass('SellingPointIncomplete') != true)
+  {
+    indexed = true;
+  }
+
   $.ajax({
     method: "POST",
     url: "/delete_property",
-    data: { id: id, _token: token}
+    data: { id: id, _token: token, indexed: indexed}
   })
-  .done(function(response) {
+  .done(function(response){
       if(response === 'deleted')
       {
         property_row.fadeOut();

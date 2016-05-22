@@ -65,8 +65,8 @@ class AdminController extends Controller
 
 	public function changePrivileges(Request $request)
 	{	
-		$user = $request->input('user');
-		$user = User::find($user[0]);
+		$user = User::findOrFail($request->input('user'));
+
 
 		if($request->input($user->id.'-isadmin'))
 		{
