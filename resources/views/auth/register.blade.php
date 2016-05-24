@@ -11,7 +11,7 @@
         <label>Are you a Broker?
             <input type="checkbox" id="showInputLicense"/>
             <div id="brokerLicense" style="display: none;">
-                <span>Add your License</span>
+                <span>Add your Brokerage Company</span>
                 <input type="text" name="brokerLicense"/>
             </div>
         </label>
