@@ -345,16 +345,16 @@ class Property extends Model
         ($this->SellingPoint->character == 1 ? $count += 1 : $count += 0);
         ($this->SellingPoint->chefs_kitchen == 1 ? $count += 1 : $count += 0);
         ($this->SellingPoint->closet_space == 1 ? $count += 1 : $count += 0);
-        ($this->SellingPoint->doorman1 == 1 ? $count += 1 : $count += 0);
-        ($this->SellingPoint->elevator1 == 1 ? $count += 1 : $count += 0);
-        ($this->SellingPoint->laundry_building1 == 1 ? $count += 1 : $count += 0);
-        ($this->SellingPoint->laundry_unit1 == 1 ? $count += 1 : $count += 0);
+        // ($this->SellingPoint->doorman1 == 1 ? $count += 1 : $count += 0);
+        // ($this->SellingPoint->elevator1 == 1 ? $count += 1 : $count += 0);
+        // ($this->SellingPoint->laundry_building1 == 1 ? $count += 1 : $count += 0);
+        // ($this->SellingPoint->laundry_unit1 == 1 ? $count += 1 : $count += 0);
         ($this->SellingPoint->low_floor == 1 ? $count += 1 : $count += 0);
         ($this->SellingPoint->luxury_building == 1 ? $count += 1 : $count += 0);
         ($this->SellingPoint->modern == 1 ? $count += 1 : $count += 0);
         ($this->SellingPoint->natural_light == 1 ? $count += 1 : $count += 0);
         ($this->SellingPoint->newly_renovated == 1 ? $count += 1 : $count += 0);
-        ($this->SellingPoint->private_outdoor1 == 1 ? $count += 1 : $count += 0);
+        // ($this->SellingPoint->private_outdoor1 == 1 ? $count += 1 : $count += 0);
         ($this->SellingPoint->proximity_subway == 1 ? $count += 1 : $count += 0);
         ($this->SellingPoint->quiet_peaceful == 1 ? $count += 1 : $count += 0);
         ($this->SellingPoint->views == 1 ? $count += 1 : $count += 0);
@@ -363,6 +363,8 @@ class Property extends Model
         if($count < 3){
             return "SellingPointIncomplete";
         }
+
+        return  "SellingPointComplete";
 
     }
 
@@ -378,22 +380,22 @@ class Property extends Model
 
 
 
-    public function updateSellingPoint(Request $request)
+    public function updateSellingPoint(Request $request, $sellingPointAmenities = null)
     {
       $this->SellingPoint()->update([
             'character' => $request->input('character'),
             'chefs_kitchen' => $request->input('chefs_kitchen'),
             'closet_space' => $request->input('closet_space'),
-            'doorman1' => $request->input('doorman1'),
-            'elevator1' => $request->input('elevator1'),
-            'laundry_building1' => $request->input('laundry_building1'),
-            'laundry_unit1' => $request->input('laundry_unit1'),
+            'doorman1' => ($request->input('doorman1') != null ? $request->input('doorman1') : $sellingPointAmenities['doorman1']), //
+            'elevator1' => ($request->input('elevator1') != null ? $request->input('elevator1') : $sellingPointAmenities['elevator1']),//
+            'laundry_building1' => ($request->input('laundry_building1') != null ? $request->input('laundry_building1') : $sellingPointAmenities['laundry_building1']),//
+            'laundry_unit1' => $request->input('laundry_unit1'),//
             'low_floor' => $request->input('low_floor'),
             'luxury_building' => $request->input('luxury_building'),
             'modern' => $request->input('modern'),
             'natural_light' => $request->input('natural_light'),
             'newly_renovated' => $request->input('newly_renovated'),
-            'private_outdoor1' => $request->input('private_outdoor1'),
+            'private_outdoor1' => $request->input('private_outdoor1'),//
             'proximity_subway' => $request->input('proximity_subway'),
             'quiet_peaceful' => $request->input('quiet_peaceful'),
             'views' => $request->input('views'),

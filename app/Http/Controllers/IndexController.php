@@ -66,73 +66,72 @@ class IndexController extends Controller
 		$properties =  Property::all();
 		
 		foreach($properties as $p){
+			if($p->checkIfHasSellingPoints() != "SellingPointIncomplete"){
+				$params = [
+				    'index' => 'truelistings',
+				    'type' => 'property',
+				    'id' => $p->id,
+				    'body' => [
+				    	'address' => $p->address,
+				    	'location'=> $p->lat.", ". $p->lng,
+				        'postal_code' => $p->postal_code,
+				        'slug' => $p->slug,
+				        'neighborhood' => $p->neighborhood,
+				        'price' => $p->price,
+				        'user_id' => $p->user_id,
+				        'description' => $p->description,
+				        'beds' => $p->beds,
+				        'baths' => $p->baths,
+				        'thumbnail' => $p->thumbnail(),
+				        'selling_points' => [
+				        	'character' => $p->SellingPoint->character,
+					        'chefs_kitchen' => $p->SellingPoint->chefs_kitchen,
+					        'closet_space' => $p->SellingPoint->closet_space,
+					        'doorman1' => $p->SellingPoint->doorman1,
+					        'elevator1' => $p->SellingPoint->elevator1,
+					        'laundry_building1' => $p->SellingPoint->laundry_building1,
+					        'laundry_unit1' => $p->SellingPoint->laundry_unit1,
+					        'low_floor' => $p->SellingPoint->low_floor,
+					        'luxury_building' => $p->SellingPoint->luxury_building,
+					        'modern' => $p->SellingPoint->modern,
+					        'natural_light' => $p->SellingPoint->natural_light,
+					        'newly_renovated' => $p->SellingPoint->newly_renovated,
+					        'private_outdoor1' => $p->SellingPoint->private_outdoor1,
+					        'proximity_subway' => $p->SellingPoint->proximity_subway,
+					        'quiet_peaceful' => $p->SellingPoint->quiet_peaceful,
+					        'views' => $p->SellingPoint->views,
+					        'size' => $p->SellingPoint->size
+				        ],
+				        'amenities' => [
+				        	'cats' => $p->Amenities->cats,
+							'dogs' => $p->Amenities->dogs,
+							'dish_washer' => $p->Amenities->dish_washer,
+							'doorman1' => $p->Amenities->doorman1,
+							'elevator1' => $p->Amenities->elevator1,
+							'furnished' => $p->Amenities->furnished,
+							'gym' => $p->Amenities->gym,
+							'pool' => $p->Amenities->pool,
+							'laundry_unit1' => $p->Amenities->laundry_unit1,
+							'laundry_building1' => $p->Amenities->laundry_unit1,
+							'no_fee' => $p->Amenities->no_fee,
+							'private_outdoor1' => $p->Amenities->private_outdoor1,
+							'common_outdoor' => $p->Amenities->common_outdoor,
+							'central_ac' => $p->Amenities->central_ac,
+							'fire_place' => $p->Amenities->fire_place,
+							'childrens_playroom' => $p->Amenities->childrens_playroom,
+							'concierge' => $p->Amenities->concierge,
+							'live_in_super' => $p->Amenities->live_in_super,
+							'lounge' => $p->Amenities->lounge,
+							'parking' => $p->Amenities->parking,
+							'storage_room' => $p->Amenities->storage_room
+				        ]
+				    ]
+				];
 
-			$params = [
-			    'index' => 'truelistings',
-			    'type' => 'property',
-			    'id' => $p->id,
-			    'body' => [
-			    	'address' => $p->address,
-			    	'location'=> $p->lat.", ". $p->lng,
-			        'postal_code' => $p->postal_code,
-			        'slug' => $p->slug,
-			        'neighborhood' => $p->neighborhood,
-			        'price' => $p->price,
-			        'user_id' => $p->user_id,
-			        'description' => $p->description,
-			        'beds' => $p->beds,
-			        'baths' => $p->baths,
-			        'thumbnail' => $p->thumbnail(),
-			        'selling_points' => [
-			        	'character' => $p->SellingPoint->character,
-				        'chefs_kitchen' => $p->SellingPoint->chefs_kitchen,
-				        'closet_space' => $p->SellingPoint->closet_space,
-				        'doorman1' => $p->SellingPoint->doorman1,
-				        'elevator1' => $p->SellingPoint->elevator1,
-				        'laundry_building1' => $p->SellingPoint->laundry_building1,
-				        'laundry_unit1' => $p->SellingPoint->laundry_unit1,
-				        'low_floor' => $p->SellingPoint->low_floor,
-				        'luxury_building' => $p->SellingPoint->luxury_building,
-				        'modern' => $p->SellingPoint->modern,
-				        'natural_light' => $p->SellingPoint->natural_light,
-				        'newly_renovated' => $p->SellingPoint->newly_renovated,
-				        'private_outdoor1' => $p->SellingPoint->private_outdoor1,
-				        'proximity_subway' => $p->SellingPoint->proximity_subway,
-				        'quiet_peaceful' => $p->SellingPoint->quiet_peaceful,
-				        'views' => $p->SellingPoint->views,
-				        'size' => $p->SellingPoint->size
-			        ],
-			        'amenities' => [
-			        	'cats' => $p->Amenities->cats,
-						'dogs' => $p->Amenities->dogs,
-						'dish_washer' => $p->Amenities->dish_washer,
-						'doorman1' => $p->Amenities->doorman1,
-						'elevator1' => $p->Amenities->elevator1,
-						'furnished' => $p->Amenities->furnished,
-						'gym' => $p->Amenities->gym,
-						'pool' => $p->Amenities->pool,
-						'laundry_unit1' => $p->Amenities->laundry_unit1,
-						'laundry_building1' => $p->Amenities->laundry_unit1,
-						'no_fee' => $p->Amenities->no_fee,
-						'private_outdoor1' => $p->Amenities->private_outdoor1,
-						'common_outdoor' => $p->Amenities->common_outdoor,
-						'central_ac' => $p->Amenities->central_ac,
-						'fire_place' => $p->Amenities->fire_place,
-						'childrens_playroom' => $p->Amenities->childrens_playroom,
-						'concierge' => $p->Amenities->concierge,
-						'live_in_super' => $p->Amenities->live_in_super,
-						'lounge' => $p->Amenities->lounge,
-						'parking' => $p->Amenities->parking,
-						'storage_room' => $p->Amenities->storage_room
-			        ]
-			    ]
-			];
-
-			$client->index($params);
+				$client->index($params);
+			}
 		}
-
 		return 'done';
-
 	}
 
 

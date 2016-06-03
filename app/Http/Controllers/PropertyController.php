@@ -72,7 +72,15 @@ class PropertyController extends Controller
 	{
 		$p = Property::findOrFail($request->input('property_id'));
 
-		$p->updateSellingPoint($request);
+		$sellingPointsAmenities = [
+			'doorman1' => $p->Amenities->doorman1,
+			'elevator1' => $p->Amenities->elevator1,
+			'laundry_building1' => $p->Amenities->laundry_building1
+		];
+
+		$p->updateSellingPoint($request, $sellingPointsAmenities);
+
+
 		if($p->checkIfHasSellingPoints() == "SellingPointIncomplete"){
 			$this->delete_document($p);
 			return $p->checkIfHasSellingPoints();
@@ -149,7 +157,7 @@ class PropertyController extends Controller
         "gq3.required" => "The 'I wish it would have' field is required"]);
 		$query = $request;
 		$neighborhoods = Neighborhood::first()->currentNeighborhoods();
-		$properties = Property::first()->getPropertiesFromSearch($request);	
+		$properties = Property::first()->getPropertiesFromSearch($request);
 		return view('search.results')
 			->withProperties($properties)
 			->withQuery($query)

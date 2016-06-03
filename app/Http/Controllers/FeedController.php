@@ -121,7 +121,11 @@ class FeedController extends Controller
 				        'baths' => $this->getBathsValue($details['num-bathrooms']),
 				        'ft2' => $details['square-feet']
 		    		]);
-		    		$property->SellingPoint()->create([]);
+		    		$property->SellingPoint()->create([
+		    			'doorman1' => ($detail_characteristics['building-has-doorman'] == 'Yes' ? 1 : 0),
+		    			'elevator1' => ($detail_characteristics['building-has-elevator'] == 'Yes' ? 1 : 0),
+		    			'laundry_building1' => ($this->getOtherAmenities($exists, $other_amenities, 'On-site Laundry') ? 1 : 0)
+		    		]);
 
 		    		$property->Amenities()->create([
 			            'cats' => 0,
