@@ -4,15 +4,25 @@
 		<button class="sort expanded button filter" data-sort="order:desc" data-filter="cats">Cats</button>
 		<button class="sort expanded button filter" data-sort="order:desc" data-filter="dogs">Dogs</button>
 		<button class="sort expanded button filter" data-sort="order:desc" data-filter="dish_washer">Dishwasher</button>
-		<button class="sort expanded button filter" data-sort="order:desc" data-filter="doorman1">Doorman</button>
-		<button class="sort expanded button filter" data-sort="order:desc" data-filter="elevator1">Elevator</button>
+		<button class="sort expanded button filter" data-sort="order:desc" data-filter="doorman1"
+			{{ ($query->input('gq1') == 'doorman1' || $query->input('gq2') == 'doorman1' || $query->input('gq3') == 'doorman1' ? 'disabled' : '') }}
+		>Doorman</button>
+		<button class="sort expanded button filter" data-sort="order:desc" data-filter="elevator1"
+			{{ ($query->input('gq1') == 'elevator1' || $query->input('gq2') == 'elevator1' || $query->input('gq3') == 'elevator1' ? 'disabled' : '') }}
+		>Elevator</button>
 		<button class="sort expanded button filter" data-sort="order:desc" data-filter="furnished">Furnished</button>
 		<button class="sort expanded button filter" data-sort="order:desc" data-filter="gym">Gym</button>
 		<button class="sort expanded button filter" data-sort="order:desc" data-filter="pool">Pool</button>
-		<button class="sort expanded button filter" data-sort="order:desc" data-filter="laundry_unit1">Laundry in Unit</button>
-		<button class="sort expanded button filter" data-sort="order:desc" data-filter="laundry_building1">Laundry in Building</button>
+		<button class="sort expanded button filter" data-sort="order:desc" data-filter="laundry_unit1"
+			{{ ($query->input('gq1') == 'laundry_unit1' || $query->input('gq2') == 'laundry_unit1' || $query->input('gq3') == 'laundry_unit1' ? 'disabled' : '') }}
+		>Laundry in Unit</button>
+		<button class="sort expanded button filter" data-sort="order:desc" data-filter="laundry_building1"
+	{{ ($query->input('gq1') == 'laundry_building1' || $query->input('gq2') == 'laundry_building1' || $query->input('gq3') == 'laundry_building1' ? 'disabled' : '') }}
+		>Laundry in Building</button>
 		<button class="sort expanded button filter" data-sort="order:desc" data-filter="no_fee">No Fee</button>
-		<button class="sort expanded button filter" data-sort="order:desc" data-filter="private_outdoor1">Private Outdoor</button>
+		<button class="sort expanded button filter" data-sort="order:desc" data-filter="private_outdoor1"
+		{{ ($query->input('gq1') == 'private_outdoor1' || $query->input('gq2') == 'private_outdoor1' || $query->input('gq3') == 'private_outdoor1' ? 'disabled' : '') }}
+		>Private Outdoor</button>
 		<button class="sort expanded button filter" data-sort="order:desc" data-filter="common_outdoor">Common Outdoor Space</button>
 		<button class="sort expanded button filter" data-sort="order:desc" data-filter="central_ac">Central A/C</button>
 		<button class="sort expanded button filter" data-sort="order:desc" data-filter="fire_place">Fire Place</button>
