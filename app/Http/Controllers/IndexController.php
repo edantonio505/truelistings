@@ -89,7 +89,7 @@ class IndexController extends Controller
 					        'closet_space' => $p->SellingPoint->closet_space,
 					        'doorman1' => $p->Amenities->doorman1,//
 					        'elevator1' => $p->Amenities->elevator1,//
-					        'laundry_building1' => $p->Amenities->laundry_unit1,//
+					        'laundry_building1' => $p->Amenities->laundry_building1,//
 					        'laundry_unit1' => $p->Amenities->laundry_unit1,//
 					        'low_floor' => $p->SellingPoint->low_floor,
 					        'luxury_building' => $p->SellingPoint->luxury_building,
