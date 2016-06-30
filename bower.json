@@ -1,0 +1,36 @@
+{
+  "name": "troocity",
+  "description": "A website to search for appartments and listings that better suit your needs",
+  "main": "",
+  "authors": [
+    "Edgar Velazquez <edantonio505@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "Appartments",
+    "Search",
+    "Appartments",
+    "Rent",
+    "Buildings"
+  ],
+  "homepage": "https://github.com/edantonio505/truelistings",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.7",
+    "semantic": "semantic-ui#^2.1.8",
+    "angular-ui-router": "^0.3.1",
+    "ng-page-title": "^1.1.1",
+    "font-awesome": "^4.6.3",
+    "bootstrap": "^3.3.6",
+    "angular-svg-round-progressbar": "^0.4.4",
+    "jquery-ui": "^1.11.4",
+    "angular-masonry": "^0.16.0"
+  }
+}

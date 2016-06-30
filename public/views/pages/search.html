@@ -1,0 +1,150 @@
+<div id="spinner">
+    <img src="images/loading.gif">
+</div>
+<wishes-search-list></wishes-search-list>
+<!-- options -->
+
+<div class="ui grid">
+    <div class="four wide column search-options-box">
+          <div class="wishes-options">
+              <div class="ui grid">
+                <div class="sixteen wide column">
+                  <div class="heart">
+                    <h5>1</h5>
+                  </div>
+                  <p class="wish-title">Cant live without...</p>
+                  
+                  <input 
+                  type="text" 
+                  id="wish1" 
+                  class="button_popup" 
+                  data-wish-id="1" 
+                  data-position="bottom left"
+                  > 
+                </div>
+
+                <div class="sixteen wide column">
+                  <div class="heart">
+                    <h5>2</h5>
+                  </div>
+                  <p class="wish-title">I really, really want...</p>
+                  
+                  <input 
+                  type="text" 
+                  id="wish2" 
+                  class="button_popup" 
+                  data-wish-id="2" 
+                  data-position="bottom left"
+                  > 
+                
+                  
+                </div>
+
+                <div class="sixteen wide column">
+                  <div class="heart">
+                    <h5>3</h5>
+                  </div>
+                  <p class="wish-title">I wish it would have a...</p>
+                  <input 
+                  type="text" 
+                  id="wish3" 
+                  class="button_popup" 
+                  data-wish-id="3" 
+                  data-position="bottom left"
+                  >
+
+                 
+                </div>
+              </div> 
+
+              <div class="search-filter-options">
+                <div class="title-bar">
+                  <p class="wish-title">I woud like to live in...</p>
+                </div>
+                
+                <div class="ui selection dropdown">
+                  <input type="hidden" name="location">
+                  <i class="dropdown icon"></i>
+                  <div class="text">{{ location }}</div>
+                  <div class="menu">
+                    <div class="item" ng-click="newLocation(n)" ng-repeat="n in neighborhoods">
+                      {{ n }}
+                    </div>
+                  </div>
+                </div>
+
+                <div class="title-bar">
+                  <p class="wish-title">My Budget is between</p>
+                </div>
+            
+                $<input type="number" ng-change="updateValue(min, 'min')" ng-model-options="{debounce: 600}" ng-model="min" id="min">&nbsp;&nbsp;$<input ng-change="updateValue(max, 'max')" ng-model-options="{debounce: 600}" type="number" ng-model="max" id="max">
+
+                <div class="title-bar">
+                  <p class="wish-title">Number of Bedrooms</p>
+                </div>
+                
+                <div class="ui fluid basic buttons">
+                  <button class="ui button" ng-click="setBeds(0)" ng-class="{ active: beds == 0 }">Studio</button>
+                  <button class="ui button" ng-click="setBeds(1)" ng-class="{ active: beds == 1 }">1</button>
+                  <button class="ui button" ng-click="setBeds(2)" ng-class="{ active: beds == 2 }">2</button>
+                  <button class="ui button" ng-click="setBeds(3)" ng-class="{ active: beds == 3 }">3</button>
+                  <button class="ui button" ng-click="setBeds(4)" ng-class="{ active: beds == 4 }">4</button>
+                  <button class="ui button" ng-click="setBeds(5)" ng-class="{ active: beds == 5 }">5</button>
+                </div>
+
+
+                <table class="ui table">
+                  <tbody>
+                    <tr ng-repeat="i in [0,2,4,6,8,10,12,14,16,18]">
+                      <td >
+                        <button 
+                        class="amenities-filter-button"
+                        id="{{ amenities[i].value }}" 
+                        ng-click="amenitiesFilter(amenities[i].value)"
+                        ng-disabled="wish1 == amenities[i].value || wish2 == amenities[i].value || wish3 == amenities[i].value">{{ amenities[i].key }}</button>
+                      </td>
+                      <td >
+                        <button 
+                        class="amenities-filter-button"
+                        id="{{ amenities[i+1].value }}" 
+                        ng-click="amenitiesFilter(amenities[i+1].value)"
+                        ng-disabled="wish1 == amenities[i+1].value || wish2 == amenities[i+1].value || wish3 == amenities[i+1].value">{{ amenities[i+1].key }}</button>
+                      </td>
+                    </tr>
+                    
+                    <tr>
+                      <td>
+                        <button 
+                        class="amenities-filter-button"
+                        id="{{ amenities[20].value }}" 
+                        ng-click="amenitiesFilter(amenities[20].value)"
+                        ng-disabled="wish1 == amenities[20].value || wish2 == amenities[20].value || wish3 == amenities[20].value">{{ amenities[20].key }}</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+          </div>
+    </div>
+
+    <div class="twelve wide column results">
+        <div id="spinner2" style="position:fixed;
+        padding:0;
+        margin:0;
+        top:0;
+        left:323px;
+        width: 100%;
+        height: 100%;
+        background-color:white; z-index:100; overflow: hidden; display:none;">
+
+          <img src="images/loading.gif" style="height:100px; width: 100px; position:absolute; top: 40%; left: 30%;">
+        </div>
+        <div class="ui grid container results" masonry>
+          <div 
+            class="eight wide column masonry-brick" 
+            ng-repeat="p in properties"><!-- Search result column -->
+            <search-result-box></search-result-box>
+          </div>
+        </div>
+    </div>
+</div>

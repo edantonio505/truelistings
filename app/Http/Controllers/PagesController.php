@@ -13,9 +13,7 @@ use Elasticsearch\ClientBuilder;
 class PagesController extends Controller
 {
 	public function index()
-	{	
-		$num = rand(1, 3);
-		$neighborhoods = Neighborhood::first()->currentNeighborhoods();
-		return view('welcome')->withNeighborhoods($neighborhoods)->withNum($num);
+	{
+		return view('master');
 	}
 }

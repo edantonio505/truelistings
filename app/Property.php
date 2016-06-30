@@ -12,6 +12,7 @@ use App\Helpers\NeighborhoodFilter;
 use Image;
 use App\Photo;
 use Auth;
+use App\Helpers\PropertyDetails;
 
 class Property extends Model
 {   
@@ -254,11 +255,43 @@ class Property extends Model
         {
             $properties = [];
         }
-        return $this->getAmenities($properties);
+        return $this->getSellingPoints($properties, $request);
     }
 
+// -----------------------------------------get Selling Points------------------------------------------
+    private function getSellingPoints($p, Request $request)
+    {   
+        $d = new PropertyDetails();
+        $sellingPoints = $d->sellingPoints;
 
+        foreach($p as $property)
+        {   $property['_source']['property_selling_points'] = array();
+            foreach($sellingPoints as $s)
+            {
+                if(
+                    ($property['_source']['selling_points'][$s['value']] == 1 && $request->input('gq1') == $s['value']) || 
+                    ($property['_source']['selling_points'][$s['value']] == 1 && $request->input('gq2') == $s['value']) ||
+                    ($property['_source']['selling_points'][$s['value']] == 1 && $request->input('gq3') == $s['value'])
+                ){
+                    $property['_source']['property_selling_points'][] = ['match' => true, 'key' => $s['key']];
+                } else if(
+                    ($request->input('gq1') == $s['value']) ||
+                    ($request->input('gq2') == $s['value']) ||
+                    ($request->input('gq3') == $s['value'])
+                ){
+                    $property['_source']['property_selling_points'][] = ['match' => false, 'key' => $s['key']];
+                }
+            }
+            $properties[] = $property;
+        }
 
+        if(!isset($properties))
+        {
+            $properties = [];
+        }
+        return $this->getAmenities($properties);
+        
+    }
 //------------------------------------------------Amenities----------------------------------------------
     private function getAmenities($p)
     {   
@@ -334,9 +367,32 @@ class Property extends Model
         {
             $properties = [];
         }
-        return $properties;
+        return $this->getAmenitiesNames($properties);
     }
 
+
+    private function getAmenitiesNames($p)
+    {   
+        $d = new PropertyDetails();
+        $amenities = $d->amenities;
+        foreach($p as $property)
+        {
+            $property['amenities'] = array();
+            foreach($amenities as $a)
+            {   
+                if(in_array($a['value'], $property["amenitiesClasses"]))
+                {
+                    $property['amenities'][] = $a['key'];
+                }
+            }
+            $properties[] = $property;
+        }
+        if(!isset($properties))
+        {
+            $properties = [];
+        }
+        return $properties;
+    }
     // -----------------------------------------Check if it has Selling Points-------------------------
 
     public function checkIfHasSellingPoints()

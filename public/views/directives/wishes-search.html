@@ -1,0 +1,32 @@
+<div>
+  <div class="column">
+    <div ng-repeat="i in [0,1,2,3,4,5]" >
+      <i ng-show="selling_points[i].value == wish1" class="wish heart icon"><span>1</span></i>
+      <i ng-show="selling_points[i].value == wish2" class="wish heart icon"><span>2</span></i>
+      <i ng-show="selling_points[i].value == wish3" class="wish heart icon"><span>3</span></i>
+      <div class="button-option" ng-class="{wishSelected: wish1 == selling_points[i].value || wish2 == selling_points[i].value || wish3 == selling_points[i].value }" ng-click="wish(selling_points[i].key, selling_points[i].value)">
+        {{ selling_points[i].key }}
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div ng-repeat="i in [6,7,8,9,10,11]">
+      <i ng-show="selling_points[i].value == wish1" class="wish heart icon"><span>1</span></i>
+      <i ng-show="selling_points[i].value == wish2" class="wish heart icon"><span>2</span></i>
+      <i ng-show="selling_points[i].value == wish3" class="wish heart icon"><span>3</span></i>
+      <div class="button-option" ng-class="{wishSelected: wish1 == selling_points[i].value || wish2 == selling_points[i].value || wish3 == selling_points[i].value }" ng-click="wish(selling_points[i].key, selling_points[i].value)">
+        {{ selling_points[i].key }}  
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div ng-repeat="i in [12,13,14,15,16]" ng-class="{wishSelected: wish1 == selling_points[i].value || wish2 == selling_points[i].value || wish3 == selling_points[i].value }">
+      <i ng-show="selling_points[i].value == wish1" class="wish heart icon"><span>1</span></i>
+      <i ng-show="selling_points[i].value == wish2" class="wish heart icon"><span>2</span></i>
+      <i ng-show="selling_points[i].value == wish3" class="wish heart icon"><span>3</span></i>
+      <div class="button-option" ng-click="wish(selling_points[i].key, selling_points[i].value)">
+        {{ selling_points[i].key }} 
+      </div> 
+    </div>
+  </div>
+</div>

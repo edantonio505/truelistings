@@ -58,3 +58,9 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/save_parsed', ['as' => 'getUserFeeds', 'uses' => 'FeedController@save_parsed', 'middleware' => 
         ['auth']]);
 });
+
+
+Route::group(['prefix' => 'api/v1'], function () {
+    Route::get('home', 'ApiController@home');
+    Route::get('search', 'ApiController@search');
+});

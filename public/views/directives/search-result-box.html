@@ -1,0 +1,104 @@
+
+    <div class="search-result-box"><!-- Search Result box -->
+      <div class="result-image" 
+          style="background-image: url({{ p._source.thumbnail }});
+          background-size: cover;"
+          ><!-- Property Image -->
+          <div class="round-progress-container">   
+              <div class="round-progress-status">{{ getMatchValue(p.match, p.calculated_value, p.amenitiesClasses) }}%</div>
+              <round-progress class="round-progress-circle"
+                    max="100"
+                    current="getMatchValue(p.match, p.calculated_value, p.amenitiesClasses)"
+                    color="{{ getColor(p.match, p.calculated_value, p.amenitiesClasses) }}"
+                    bgcolor="#eaeaea"
+                    radius="30"
+                    stroke="7"
+                    semi="false"
+                    rounded="false"
+                    clockwise="true"
+                    responsive="false"
+                    duration="800"
+                    animation="easeInOutQuart"
+                    animation-delay="0">
+              </round-progress>
+          </div>
+      </div><!-- Property Image End -->
+
+      <div class="result-info"><!-- Property information -->
+          <div>
+              <h5>{{ p._source.neighborhood }}</h5>
+              <div class="popup-info" ng-click="showMore($index, p._source.location)">
+                <i  class="ellipsis vertical icon"></i>
+              </div>
+          </div>
+        <div class="basic-info">
+            <div class="basic-info-grid">
+                <div class="ui three column center aligned grid">
+                    <div class="column">
+                        <p>${{ p._source.price }}</p><span>/mo</span>
+                    </div>
+                    <div class="column middle">
+                        <p>{{ getBeds(p._source.beds) }}<span ng-hide="p._source.beds == 0">BR</span></p>
+                    </div>
+                    <div class="column">
+                        <p>{{ getBaths(p._source.baths) }}<span>BA</span></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="result-wishes-title">
+                    <p>Your Wishes</p>
+                </div>
+        <div class="ui two column grid wishes">
+            <div class="column">
+                  <ul>
+                      <li ng-repeat="w in p._source.property_selling_points" ng-class="{unmatched:!w.match}">
+                        <i ng-show="w.match" class="check icon"></i> 
+                        <i ng-show="!w.match" class="remove icon"></i>
+                        {{ w.key }}
+                      </li>
+                  </ul>
+            </div>
+            <div class="column agent">
+
+              <div class="agent-profile-container">
+                  <div class="agent-picture"></div>
+                  <h5>Itay Gamlieli</h5>
+                  <button class="ui blue button">Contact Now</button>
+              </div>
+            </div>
+        </div>
+
+      </div><!-- Property information end -->
+
+
+
+      <div id="{{ $index }}-more-info-box" class="more-info-box">
+        <div id="{{ $index }}-map" class="map">
+        </div>
+        <div class="amenities-title">
+          <p>Amenities</p>
+        </div>
+
+        <div class="ui three column grid amenities-list">
+          <div class="column">
+            <ul>
+              <li ng-repeat="i in [0,1,2]" ng-show="p.amenities[i] != null">{{ p.amenities[i] }}</li>
+            </ul>
+          </div>
+
+          <div class="column">
+            <ul>
+              <li ng-repeat="i in [3,4,5]" ng-show="p.amenities[i] != null">{{ p.amenities[i] }}</li>
+            </ul>
+          </div>
+
+          <div class="column">
+            <ul>
+              <li ng-repeat="i in [6,7,8]" ng-show="p.amenities[i] != null">{{ p.amenities[i] }}</li>
+            </ul>
+          </div>
+        </div>                  
+      </div>
+    </div><!-- Search Result Box -->

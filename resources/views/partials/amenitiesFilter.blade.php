@@ -28,7 +28,6 @@ function removeFromFilter($this){
   var indexOfArray = value.indexOf(filter);
   value.splice(indexOfArray, 1);
   val = 20 / (value.length);
-  console.log(val);
   showResultOfCalculation(val);
   mixItUp();
 }
