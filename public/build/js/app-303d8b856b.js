@@ -944,7 +944,7 @@ angular.module('App')
 
 			if(elementsCount > 10)
 			{
-				time = $timeout;
+				time = 1500;
 			} else if(elementsCount > 20)
 			{
 				time = 3000;
@@ -1005,7 +1005,7 @@ angular.module('App')
 
 			if(elementsCount > 10)
 			{
-				time = $timeout;
+				time = 1500;
 			} else if(elementsCount > 20)
 			{
 				time = 3000;
