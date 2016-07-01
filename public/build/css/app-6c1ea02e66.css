@@ -335,6 +335,10 @@
   .agent-profile-container {
     max-width: 240px !important; } }
 
+@media (min-width: 2300px) {
+  .eight.wide.column.masonry-brick {
+    width: 33.33% !important; } }
+
 .agent-profile-container h5 {
   font-weight: normal !important;
   margin-left: 15px;
