@@ -954,7 +954,8 @@ angular.module('App')
 			}
 
 			$timeout(function(){
-				$("#spinner").fadeOut();
+				// $("#spinner").fadeOut();
+				document.getElementById('spinner').style.display = 'none';
 			}, time);
 		});
 	};
