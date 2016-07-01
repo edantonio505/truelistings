@@ -159,6 +159,17 @@
   color: #535d6c;
   font-family: 'Lato', sans-serif; }
 
+@media (min-width: 1700px) {
+  .wishes-options {
+    max-width: 420px !important; }
+  .wishes-options .wish-title {
+    font-size: 20px !important; }
+  .wishes-options .title-bar {
+    height: 35px !important; }
+  .wishes-options .heart {
+    left: 80px !important;
+    top: 22px !important; } }
+
 .wishes-options table {
   text-align: center !important; }
 
