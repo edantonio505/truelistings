@@ -843,11 +843,10 @@ angular.module('App')
 
 
 	$scope.showMore = function(index, location){
+		var $grid = $('.grid');
 		var $this = $('#'+index+'-more-info-box');
 		var moreInfo = $('.more-info-box');
 		var speed = 600;
-		var $grid = $('.grid');
-		$grid.masonry();
 		if($this.hasClass('showing-info') == false)
 		{	
 			/*-------------------------------
@@ -954,8 +953,7 @@ angular.module('App')
 			}
 
 			$timeout(function(){
-				// $("#spinner").fadeOut();
-				document.getElementById('spinner').style.display = 'none';
+				$("#spinner").fadeOut();
 			}, time);
 		});
 	};
@@ -993,33 +991,21 @@ angular.module('App')
 
 
 	$scope.getNewResults = function(param, value){
+		$('.grid').masonry('destroy');
 		var newurl = urlChanger.change(document.URL, param, value);
 		var elementsCount = 0;
 		var time = 0;
-		
+		$("#spinner2").fadeIn();
 		$http.get(newurl)
 		.success(function(data){
-			$("#spinner2").fadeIn();
 			$scope.properties = data.properties;
 			window.scrollTo(0, 0);
 			elementsCount = Object.keys(data.properties).length;
 
-			if(elementsCount > 15)
-			{
-				time = 1500;
-			} else if(elementsCount > 20)
-			{
-				time = 3000;
-			} else if(elementsCount < 15)
-			{
-				time = $timeout;
-			}
-
 			$timeout(function(){
-				// $("#spinner2").fadeOut();
-				document.getElementById('spinner2').style.display = 'none';
-			}, time);
-		});		
+				$("#spinner2").fadeOut();
+			}, $timeout);
+		});
 	}
 
 	$scope.updateValue = function(value, type){
@@ -1073,6 +1059,10 @@ angular.module('App')
 			return newValue;
 		}
 	}
+
+	$scope.activateMasonry = function(){
+		$('.grid').masonry();
+	};
 
 	$scope.init();
 
