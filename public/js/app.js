@@ -928,6 +928,7 @@ angular.module('App')
 
 	// Get the results from the initial search
 	$scope.init = function(){
+		$('.grid').masonry('destroy');
 		var elementsCount = 0;
 		var time = 0;
 		$http.get(url)
