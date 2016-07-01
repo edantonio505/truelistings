@@ -4,8 +4,8 @@
 <wishes-search-list></wishes-search-list>
 <!-- options -->
 
-<div class="ui grid">
-    <div class="four wide column search-options-box">
+<div >
+    <div class="box1 search-options-box">
           <div class="wishes-options">
               <div class="ui grid">
                 <div class="sixteen wide column">
@@ -127,7 +127,7 @@
           </div>
     </div>
 
-    <div class="twelve wide column results">
+    <div class="box2 results">
         <div id="spinner2" style="position:fixed;
         padding:0;
         margin:0;
@@ -139,9 +139,9 @@
 
           <img src="images/loading.gif" style="height:100px; width: 100px; position:absolute; top: 40%; left: 30%;">
         </div>
-        <div class="ui grid container results" masonry>
+        <div class="results" masonry>
           <div 
-            class="eight wide column masonry-brick" 
+            class="result-box-list masonry-brick" 
             ng-repeat="p in properties"><!-- Search result column -->
             <search-result-box></search-result-box>
           </div>

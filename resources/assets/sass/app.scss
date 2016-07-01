@@ -83,6 +83,33 @@ $red: #ff5b4d;
 .wish-list .button-option:hover {
   cursor: pointer;
 }
+// ----------------New GRID SYSTEM DESIGN------------------------------
+.box1 {
+  height: auto;
+  min-height: 600px;
+  min-width: 10px;
+  width:25%;
+  float: left;
+  position:relative;
+  padding-right: 5px;
+}
+
+.box2 {
+ position:relative;
+ height: auto;
+ min-height: 600px;
+ min-width: 10px;
+ width:75%;
+ float: left;
+ padding:15px;
+}
+
+.result-box-list {
+  width: 50% !important;
+  padding:10px;
+  float:left;
+}
+// ----------------New GRID SYSTEM DESIGN------------------------------
 
 .wish-list .column{
   width: 33% !important;
