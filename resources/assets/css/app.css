@@ -141,7 +141,7 @@
     left: 80px !important;
     top: 22px !important; }
   .wishes-options .sixteen.wide.column {
-    height: 80px !important; } }
+    min-height: 80px !important; } }
 
 .wishes-options table {
   text-align: center !important; }
