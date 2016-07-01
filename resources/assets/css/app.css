@@ -503,6 +503,10 @@
   padding: 0px;
   font-size: 13px !important; }
 
+@media (min-height: 1310) {
+  .rooms .ui.button {
+    padding: 12px !important; } }
+
 .rooms {
   width: 100%;
   height: 100%; }
