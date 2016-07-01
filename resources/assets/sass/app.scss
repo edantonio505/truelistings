@@ -117,7 +117,8 @@ $red: #ff5b4d;
 }
 
 .wishes-options {
-  height: 700px; 
+  min-height: 700px;
+  height: 100%; 
   min-width:10px; 
   width:100%; 
   background-color: $box-grey;

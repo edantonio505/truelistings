@@ -94,7 +94,8 @@
   border: 1px solid transparent; }
 
 .wishes-options {
-  height: 700px;
+  min-height: 700px;
+  height: 100%;
   min-width: 10px;
   width: 100%;
   background-color: #e9ebee;
