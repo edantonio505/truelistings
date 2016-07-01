@@ -259,7 +259,8 @@ angular.module('App')
 			}
 
 			$timeout(function(){
-				$("#spinner2").fadeOut();
+				// $("#spinner2").fadeOut();
+				document.getElementById('spinner2').style.display = 'none';
 			}, time);
 		});		
 	}
