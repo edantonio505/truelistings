@@ -1003,13 +1003,13 @@ angular.module('App')
 			window.scrollTo(0, 0);
 			elementsCount = Object.keys(data.properties).length;
 
-			if(elementsCount > 10)
+			if(elementsCount > 15)
 			{
 				time = 1500;
 			} else if(elementsCount > 20)
 			{
 				time = 3000;
-			} else if(elementsCount < 10)
+			} else if(elementsCount < 15)
 			{
 				time = $timeout;
 			}
