@@ -503,7 +503,7 @@
   padding: 0px;
   font-size: 13px !important; }
 
-@media (min-height: 1310px) {
+@media (min-width: 1310px) {
   .rooms .ui.button {
     padding: 12px !important; } }
 
