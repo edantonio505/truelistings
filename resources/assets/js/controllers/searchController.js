@@ -241,8 +241,8 @@ angular.module('App')
 		
 		$http.get(newurl)
 		.success(function(data){
-			$scope.properties = data.properties;
 			$("#spinner2").fadeIn();
+			$scope.properties = data.properties;
 			window.scrollTo(0, 0);
 			elementsCount = Object.keys(data.properties).length;
 
