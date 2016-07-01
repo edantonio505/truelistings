@@ -365,6 +365,13 @@ $red: #ff5b4d;
   left: 30px;
 }
 
+@media(min-width: 1477px)
+{
+  .agent-profile-container {
+    max-width: 240px !important;
+  }
+}
+
 .agent-profile-container h5{
   font-weight: normal !important;
   margin-left: 15px;
