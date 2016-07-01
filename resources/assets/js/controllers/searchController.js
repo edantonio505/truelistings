@@ -236,6 +236,7 @@ angular.module('App')
 
 
 	$scope.getNewResults = function(param, value){
+		$grid.masonry('destroy');
 		var newurl = urlChanger.change(document.URL, param, value);
 		var elementsCount = 0;
 		var time = 0;
