@@ -928,7 +928,6 @@ angular.module('App')
 
 	// Get the results from the initial search
 	$scope.init = function(){
-		$('.grid').masonry('destroy');
 		var elementsCount = 0;
 		var time = 0;
 		$http.get(url)
@@ -992,7 +991,8 @@ angular.module('App')
 
 
 	$scope.getNewResults = function(param, value){
-		$('.grid').masonry('destroy');
+		var $grid = $('.grid');
+		$grid.masonry('destroy');
 		var newurl = urlChanger.change(document.URL, param, value);
 		var elementsCount = 0;
 		var time = 0;
@@ -1006,6 +1006,10 @@ angular.module('App')
 			$timeout(function(){
 				$("#spinner2").fadeOut();
 			}, $timeout);
+
+			$timeout(function(){
+				$grid.masonry();
+			}, 1000);
 		});
 	}
 
@@ -1060,10 +1064,6 @@ angular.module('App')
 			return newValue;
 		}
 	}
-
-	$scope.activateMasonry = function(){
-		$('.grid').masonry();
-	};
 
 	$scope.init();
 
