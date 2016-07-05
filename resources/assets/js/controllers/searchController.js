@@ -180,7 +180,8 @@ angular.module('App')
 			$scope.selling_points = data.selling_points;
 			$scope.amenities = data.amenities;
 			$scope.selected_wishes = data.selected_wishes;
-			$scope.setWishesValue();
+			// $scope.setWishesValue();
+			$scope.getWishValue();
 			window.scrollTo(0, 0);
 			elementsCount = Object.keys(data.properties).length;
 
@@ -219,12 +220,18 @@ angular.module('App')
 	};
 	// ----------------------------------------------
 
-	$scope.setWishesValue = function(){
-		for(var i = 0; i <= 2; i++)
-		{	
-			if(i == 0){option = $scope.wish1;} else if(i == 1){option = $scope.wish2;} else {option = $scope.wish3;}
-			document.getElementById('wish'+(i+1)).value = $scope.selected_wishes[i][option];
-		}
+
+	
+	$scope.getWishValue = function(){
+		angular.forEach($scope.selected_wishes, function(value, key){
+			if(value[$scope.wish1] != undefined){
+				document.getElementById('wish1').value = value[$scope.wish1];
+			} else if(value[$scope.wish2] != undefined){
+				document.getElementById('wish2').value = value[$scope.wish2];
+			} else {
+				document.getElementById('wish3').value = value[$scope.wish3];
+			}
+		});
 	};
 
 	$scope.newLocation = function(newLocation){

@@ -143,7 +143,7 @@ class FeedController extends Controller
 			            'common_outdoor' => ($detail_characteristics['has-patio'] == 'Yes' ? 1 : 0),
 			            'central_ac' => ($this->getOtherAmenities($exists, $other_amenities, 'Central A/C') ? 1 : 0),
 			            'fire_place' => ($detail_characteristics['has-fireplace'] == 'Yes' ? 1 : 0),
-			       'childrens_playroom' => ($this->getOtherAmenities($exists, $other_amenities, "Children's Playroom") ? 1 : 0),
+			       		'childrens_playroom' => ($this->getOtherAmenities($exists, $other_amenities, "Children's Playroom") ? 1 : 0),
 			            'concierge' => ($detail_characteristics['building-has-concierge'] == 'Yes' ? 1 : 0),
 			            'live_in_super' => ($this->getOtherAmenities($exists, $other_amenities, "Live In Super") ? 1 : 0),
 			            'lounge' => ($this->getOtherAmenities($exists, $other_amenities, "Lounge") ? 1 : 0),
