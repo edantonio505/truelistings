@@ -112,7 +112,7 @@ angular.module('App')
 		        fillOpacity: 0.35,
 		        map: map,
 		        center: {lat: Number(l[0]), lng: Number(l[1])},
-		        radius: 1000
+		        radius: 700
 		    });
 
 		    google.maps.event.addListenerOnce(map, 'idle', function() {
@@ -221,7 +221,7 @@ angular.module('App')
 	// ----------------------------------------------
 
 
-	
+
 	$scope.getWishValue = function(){
 		angular.forEach($scope.selected_wishes, function(value, key){
 			if(value[$scope.wish1] != undefined){
