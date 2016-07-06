@@ -38,14 +38,31 @@ angular.module('App')
 	    }
 	}
 
+	angular.element(window).bind("scroll", function() {
+	    var windowHeight = "innerHeight" in window ? window.innerHeight : document.documentElement.offsetHeight;
+	    var body = document.body, html = document.documentElement;
+	    var docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight,  html.scrollHeight, html.offsetHeight);
+	    windowBottom = windowHeight + window.pageYOffset;
+	    if (windowBottom >= docHeight) {
+	    	if($scope.nextPage != null){
+		        $http.get($scope.nextPage).
+		        success(function(data){
+	        		$scope.nextPage = data.properties.next_page_url;
+	        		// $scope.properties = $scope.properties.concat(data.properties.data);
+	        		angular.forEach(data.properties.data, function(value, key){
+	        			$scope.properties.push(value);
+	        		});
+		        });
+	        }
+	    }
+	});
+
 
 	// --------------------------jQuery Functions---------------------------
 	$(window).click(function() {
 		$('.wish-list').fadeOut(200);
 		$('.button_popup').removeClass('visible');
 	});
-
-
 	$('.button_popup').click(function(event){
 		var $this = $(this);
 		id = $this.attr('data-wish-id');
@@ -66,6 +83,8 @@ angular.module('App')
 	});
 	// ---------------------------------------------------------------------
 
+
+
 	$scope.getColor = function(match, calculated, amenities) {
 
 		if($scope.buttonFilterSelected == false)
@@ -84,6 +103,7 @@ angular.module('App')
 	    }
 	    return $scope.currentColor;
 	}
+
 
 
 	$scope.showMore = function(index, location){
@@ -133,6 +153,7 @@ angular.module('App')
 	};
 
 
+
 	$scope.getBaths = function(b){
 		if(b > 10)
 		{
@@ -142,6 +163,8 @@ angular.module('App')
 		}
 	};
 
+
+
 	$scope.getBeds = function(b){
 		if(b == 0){
 			return 'Studio';
@@ -150,10 +173,14 @@ angular.module('App')
 		}
 	};
 
+
+
 	$scope.setBeds = function(n){
 		$scope.beds = n;
 		$scope.getNewResults('beds', n);
 	};
+
+
 
 
 	// Get the results from the initial search
@@ -164,36 +191,25 @@ angular.module('App')
 		var time = 0;
 		$http.get(url)
 		.success(function(data){
-			$scope.properties = data.properties;
+			$scope.properties = data.properties.data;
+			$scope.nextPage = data.properties.next_page_url;
 			$scope.neighborhoods = data.neighborhoods;
 			$scope.selling_points = data.selling_points;
 			$scope.amenities = data.amenities;
 			$scope.selected_wishes = data.selected_wishes;
-			// $scope.setWishesValue();
 			$scope.getWishValue();
 			window.scrollTo(0, 0);
-			elementsCount = Object.keys(data.properties).length;
-
-			if(elementsCount > 10)
-			{
-				time = 1500;
-			} else if(elementsCount > 20)
-			{
-				time = 3000;
-			} else if(elementsCount < 10)
-			{
-				time = $timeout;
-			}
-
 			$timeout(function(){
 				$("#spinner").fadeOut();
-			}, time);
+			}, 1500);
 
 			$timeout(function(){
 				$grid.masonry();
 			}, 1000);
 		});
 	};
+
+
 
 	// Pick wishes-----------------------------------
 	$scope.wish = function(wish, value){
@@ -215,6 +231,7 @@ angular.module('App')
 
 
 
+
 	$scope.getWishValue = function(){
 		angular.forEach($scope.selected_wishes, function(value, key){
 			if(value[$scope.wish1] != undefined){
@@ -227,10 +244,15 @@ angular.module('App')
 		});
 	};
 
+
+
+
 	$scope.newLocation = function(newLocation){
 		$scope.location = newLocation;
 		$scope.getNewResults('location', newLocation);
 	};
+
+
 
 
 	$scope.getNewResults = function(param, value){
@@ -242,10 +264,9 @@ angular.module('App')
 		$("#spinner2").fadeIn();
 		$http.get(newurl)
 		.success(function(data){
-			$scope.properties = data.properties;
+			$scope.properties = data.properties.data;
+			$scope.nextPage = data.properties.next_page_url;
 			window.scrollTo(0, 0);
-			elementsCount = Object.keys(data.properties).length;
-
 			$timeout(function(){
 				$("#spinner2").fadeOut();
 			}, $timeout);
@@ -254,12 +275,14 @@ angular.module('App')
 				$grid.masonry();
 			}, 1000);
 		});
-
 		// Button-------------------------
 		$('.amenities-filter-button').removeClass('selected');
 		$scope.buttonFilterSelected = false;
 		amenitiesFilterValues = [];
 	}
+
+
+
 
 	$scope.updateValue = function(value, type){
 		if(value != null)
@@ -273,6 +296,9 @@ angular.module('App')
 			}
 		}
 	}
+
+
+
 
 	$scope.amenitiesFilter = function(value){
 		var $this = $('#'+value);
@@ -290,7 +316,6 @@ angular.module('App')
 			val = 20 / amenitiesFilterValues.length;
 			$scope.reArrange();
 		}
-
 		var newArray = [];
 		angular.forEach($scope.properties, function(value, key){
 			value['recalculated'] = $scope.getMatchValue(value.match, value.calculated_value, value.amenitiesClasses);
@@ -299,6 +324,9 @@ angular.module('App')
 		});
 		$scope.properties = newArray;
 	}
+
+
+
 
 	$scope.reArrange = function(){
 		var $grid = $('.grid');
@@ -310,6 +338,9 @@ angular.module('App')
 		    $interval.cancel(interval);
 		}, 2000);
 	};
+
+
+
 
 	$scope.getAmenitiesRealValues =  function(amenities){
 		var flag = 0;
@@ -324,6 +355,8 @@ angular.module('App')
 	};
 
 
+
+
 	$scope.getMatchValue = function(match, calculated, amenities){
 		if($scope.buttonFilterSelected == false)
 		{
@@ -334,7 +367,6 @@ angular.module('App')
 		}
 	}
 
-	
 	$scope.init();
 
 });

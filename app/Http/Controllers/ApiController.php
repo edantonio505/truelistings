@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Property;
 use App\Neighborhood;
 use App\Helpers\PropertyDetails;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class ApiController extends Controller
 {
@@ -19,8 +20,10 @@ class ApiController extends Controller
 
 
     public function search(Request $request)
-    {
-        $properties = Property::first()->getPropertiesFromSearch($request);
+    {   
+        $path = 'api/v1/search?min='.$request->input('min').'&max='.$request->input('max').'&location='.$request->input('location').'&beds='.$request->input('beds').'&gq1='.$request->input('gq1').'&gq2='.$request->input('gq2').'&gq3='.$request->input('gq3');
+        
+        $properties = $this->paginate(Property::first()->getPropertiesFromSearch($request))->setPath($path);
         $neighborhoods = Neighborhood::first()->currentNeighborhoods();
         $selected_wishes = array();
         
@@ -50,5 +53,28 @@ class ApiController extends Controller
         $d = new PropertyDetails();
         $details = ($type == 1 ? $d->sellingPoints : $d->amenities);
         return $details;
+    }
+
+
+
+    // ------------------------------Paginator--------------------------
+    /**
+     * Create a length aware custom paginator instance.
+     *
+     * @param  Collection  $items
+     * @param  int  $perPage
+     * @return \Illuminate\Pagination\LengthAwarePaginator
+     */
+    protected function paginate($items, $perPage = 12)
+    {
+        //Get current page form url e.g. &page=1
+        $currentPage = LengthAwarePaginator::resolveCurrentPage();
+
+        //Slice the collection to get the items to display in current page
+        $currentPageItems = array_slice($items, ($currentPage - 1) * $perPage, $perPage);
+
+
+        //Create our paginator and pass it to the view
+        return new LengthAwarePaginator($currentPageItems, count($items), $perPage);
     }
 }
