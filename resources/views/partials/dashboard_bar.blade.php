@@ -1,4 +1,4 @@
-<div style="background-color:#dbdbdb; min-height: 100px; width: 100%; margin-top: 47px;">
+<div style="background-color:#bdbdbd; min-height: 100px; width: 100%; margin-top: 47px;">
 	<div class="row">
 		<div class="large-10 large-centered columns">
 			<div class="row">
