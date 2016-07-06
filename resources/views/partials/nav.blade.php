@@ -5,7 +5,7 @@
 <div class="top-bar" id="realEstateMenu">
 	<div class="top-bar-left">
 		<ul class="menu accordion-menu" data-responsive-menu="accordion" role="tablist" aria-multiselectable="true" data-accordionmenu="80zcu3-accordionmenu" data-responsivemenu="u2hz69-responsivemenu">
-			<li class="menu-text" role="menuitem"><a class="logo" href="/"><img src="/images/dashboardicons/logotruelisting.svg">truelisting</a></li>
+			<li class="menu-text" role="menuitem"><a class="logo" href="/"><img src="/images/dashboardicons/logotruelisting.svg">troocity</a></li>
 		</ul>
 	</div>
 	<div class="top-bar-right">

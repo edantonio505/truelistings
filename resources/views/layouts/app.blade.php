@@ -7,6 +7,7 @@
 		<link rel="stylesheet" href="{{ elixir('css/all.css') }}">
 		<link href='https://fonts.googleapis.com/css?family=Kanit:400,200,100' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
 		@yield('styles')
 		<script src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
 	</head>
