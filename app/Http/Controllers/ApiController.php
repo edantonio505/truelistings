@@ -65,7 +65,7 @@ class ApiController extends Controller
      * @param  int  $perPage
      * @return \Illuminate\Pagination\LengthAwarePaginator
      */
-    protected function paginate($items, $perPage = 10)
+    protected function paginate($items, $perPage = 12)
     {
         //Get current page form url e.g. &page=1
         $currentPage = LengthAwarePaginator::resolveCurrentPage();
