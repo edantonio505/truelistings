@@ -369,23 +369,35 @@
   position: relative;
   left: 3px; }
 
-.ui.two.column.grid.wishes ul {
+.wishes-list-results {
+  float: left;
+  min-width: 10px;
+  width: 60%; }
+
+.wishes-list-results ul {
   list-style: none;
   margin-bottom: 0px;
-  padding-left: 0px;
-  font-size: 80%;
+  padding-left: 5px;
+  font-size: 100%;
   font-weight: lighter; }
+
+.agent-info-results {
+  float: left;
+  min-width: 10px;
+  width: 40%; }
+
+.column.agent {
+  float: right !important; }
 
 .wishes i {
   float: none; }
 
-.wishes .column.agent {
+.wishes .agent-info-results {
   text-align: center; }
 
 .agent-profile-container {
   position: relative;
-  top: -70px;
-  left: 10px; }
+  top: -50px; }
 
 .agent-profile-container .ui.blue.button {
   font-size: 70% !important; }
@@ -410,7 +422,7 @@
   margin-left: 12px !important;
   font-size: 13px !important; }
 
-.wishes .column.agent .agent-picture {
+.wishes .agent-picture {
   background-color: #535d6c;
   height: 40px;
   width: 40px;
@@ -457,7 +469,7 @@
   margin-left: 10px; }
 
 .amenities-list li {
-  font-size: 70%; }
+  font-size: 87%; }
 
 .unmatched {
   color: #ff5b4d; }

@@ -50,8 +50,8 @@
         <div class="result-wishes-title">
                     <p>Your Wishes</p>
                 </div>
-        <div class="ui two column grid wishes">
-            <div class="column">
+        <div class="ui column wishes" style="background-color:red; min-width:10px; width: 100%;">
+            <div class="wishes-list-results">
                   <ul>
                       <li ng-repeat="w in p._source.property_selling_points" ng-class="{unmatched:!w.match}">
                         <i ng-show="w.match" class="check icon"></i> 
@@ -60,7 +60,7 @@
                       </li>
                   </ul>
             </div>
-            <div class="column agent">
+            <div class="agent-info-results">
 
               <div class="agent-profile-container">
                   <div class="agent-picture"></div>
