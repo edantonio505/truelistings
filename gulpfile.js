@@ -38,7 +38,6 @@ elixir(function(mix) {
         base+'angular-svg-round-progressbar/build/roundProgress.min.js',
         base+'imagesloaded/imagesloaded.pkgd.min.js',
         base+'masonry/dist/masonry.pkgd.min.js',
-        base+'mixitup/build/jquery.mixitup.min.js',
         base+'angular-masonry/angular-masonry.js',
         // ----------------------------
 

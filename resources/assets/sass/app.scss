@@ -319,7 +319,7 @@ $red: #ff5b4d;
 .angular-google-map-container { height: 200px; }
 
 .search-result-box {
-  min-height: 430px;
+  min-height: 171px;
   height: auto; 
   min-width: 10px; 
   width: 100%; 
@@ -330,16 +330,21 @@ $red: #ff5b4d;
   color: $box-text;
 }
 
+.search-result-box .first_container {}
+
 .result-image {
   background-color: $box-grey; 
-  height: 250px; 
-  border-radius: 5px 5px 0px 0px
+  height:170px;
+  width: 40%; 
+  border-radius: 5px 0px 0px 5px;
+  float:left;
 }
 
 .result-info {
   min-width: 10px; 
   height: 130px; 
-  width: 100%;
+  width: 60%;
+  float:left;
 }
 
 .result-info i {
@@ -387,10 +392,11 @@ $red: #ff5b4d;
   position:relative;
   top: -2px;
   display:inline;
+  font-size: 70% !important;
 }
 
 .basic-info-grid .column span {
-  font-size:10px;
+  font-size:70%;
   position:relative;
   top: -2px;
 }
@@ -414,7 +420,7 @@ $red: #ff5b4d;
   list-style: none;
   margin-bottom: 0px;
   padding-left: 0px;
-  font-size:16px;
+  font-size:80%;
   font-weight: lighter;
 }
 
@@ -429,7 +435,15 @@ $red: #ff5b4d;
 .agent-profile-container {
   position:relative; 
   top: -70px;
-  left: 30px;
+  left: 10px;
+}
+
+.agent-profile-container .ui.blue.button {
+  font-size: 70% !important;
+}
+
+.agent-profile-container h5 {
+  font-size: 80% !important;
 }
 
 @media(min-width: 1477px)
@@ -458,8 +472,8 @@ $red: #ff5b4d;
 }
 .wishes .column.agent .agent-picture {
   background-color:$box-text; 
-  height:60px; 
-  width: 60px; 
+  height:40px; 
+  width: 40px; 
   margin:0 auto; 
   border-radius: 50px;
 }
@@ -474,23 +488,30 @@ $red: #ff5b4d;
 }
 
 .more-info-box {
-  height: 320px; 
+  // height: 170px; 
+  // width: 100%; 
+  // display:none; 
+  // margin-top: 45px; 
+  // border-radius: 0px 0px 3px 3px;
+
+  height: 170px;
   width: 100%; 
-  display:none; 
-  margin-top: 45px; 
-  border-radius: 0px 0px 3px 3px;
+  clear: both;
+  display:none;
 }
 
 .more-info-box  .map {
-  height: 200px; 
-  width: 100%; 
+  min-height: 10px; 
+  min-width: 10px; 
+  height:100%; 
+  width: 40%; 
   background-color: $box-grey;
+  float:left;
 }
 
 .amenities-title {
   width: 70px; 
   height: 20px; 
-  margin-top: 10px; 
   background-color: $box-grey;
   border-radius: 0px 3px 3px 0px;
 }
@@ -511,7 +532,7 @@ $red: #ff5b4d;
 }
 
 .amenities-list li {
-  font-size: 13px;
+  font-size: 70%;
 }
 
 .unmatched {

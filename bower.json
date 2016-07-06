@@ -31,7 +31,6 @@
     "bootstrap": "^3.3.6",
     "angular-svg-round-progressbar": "^0.4.4",
     "jquery-ui": "^1.11.4",
-    "angular-masonry": "^0.16.0",
-    "mixitup": "^2.1.11"
+    "angular-masonry": "^0.16.0"
   }
 }

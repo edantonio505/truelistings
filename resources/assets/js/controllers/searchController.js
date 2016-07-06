@@ -6,7 +6,8 @@ angular.module('App')
 	$http, 
 	$interval, 
 	$timeout,
-	urlChanger
+	urlChanger,
+	$filter
 ){
 	// ----------------------------------------------------------------
 	var url = window.location.href;
@@ -37,6 +38,7 @@ angular.module('App')
 	        color: '#67bb17'
 	    }
 	}
+
 
 	// --------------------------jQuery Functions---------------------------
 	$(window).click(function() {
@@ -86,7 +88,6 @@ angular.module('App')
 
 
 	$scope.showMore = function(index, location){
-		var $grid = $('.grid');
 		var $this = $('#'+index+'-more-info-box');
 		var moreInfo = $('.more-info-box');
 		var speed = 600;
@@ -124,24 +125,11 @@ angular.module('App')
 			moreInfo.removeClass('showing-info');
 			$this.show('blind', {}, speed);
 			$this.addClass('showing-info');
-
-			var interval = $interval(function () {
-			    $grid.masonry('layout');
-			}, 200);
-
-			$timeout(function(){
-			    $interval.cancel(interval);
-			}, 2000);
+			$scope.reArrange();
 		} else {
 			$this.hide('blind', {}, speed);
 			$this.removeClass('showing-info');
-			var interval = $interval(function () {
-			    $grid.masonry('layout');
-			}, 200);
-
-			$timeout(function(){
-			    $interval.cancel(interval);
-			}, 2000);
+			$scope.reArrange();
 		}	
 	};
 
@@ -261,6 +249,11 @@ angular.module('App')
 				$grid.masonry();
 			}, 1000);
 		});
+
+		// Button-------------------------
+		$('.amenities-filter-button').removeClass('selected');
+		$scope.buttonFilterSelected = false;
+		amenitiesFilterValues = [];
 	}
 
 	$scope.updateValue = function(value, type){
@@ -284,13 +277,35 @@ angular.module('App')
 			amenitiesFilterValues.push(value);
 			$scope.buttonFilterSelected = amenitiesFilterValues.length > 0 ? true : false;
 			val = 20 / amenitiesFilterValues.length;
+			$scope.reArrange();
 		} else {
 			amenitiesFilterValues.splice(value, 1);
 			$this.removeClass('selected');
 			$scope.buttonFilterSelected = amenitiesFilterValues.length > 0 ? true : false;
 			val = 20 / amenitiesFilterValues.length;
+			$scope.reArrange();
 		}
+
+		var newArray = [];
+		angular.forEach($scope.properties, function(value, key){
+			value['recalculated'] = $scope.getMatchValue(value.match, value.calculated_value, value.amenitiesClasses);
+			newArray.push(value);
+			newArray.sort(function(a, b){return b['recalculated'] - a['recalculated']});
+		});
+		$scope.properties = newArray;
+
 	}
+
+	$scope.reArrange = function(){
+		var $grid = $('.grid');
+		$grid.masonry();
+		var interval = $interval(function () {
+		   $grid.masonry('layout');
+		}, 200);
+		$timeout(function(){
+		    $interval.cancel(interval);
+		}, 2000);
+	};
 
 	$scope.getAmenitiesRealValues =  function(amenities){
 		var flag = 0;
@@ -315,6 +330,7 @@ angular.module('App')
 		}
 	}
 
+	
 	$scope.init();
 
 });

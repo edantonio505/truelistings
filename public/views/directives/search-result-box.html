@@ -73,32 +73,37 @@
       </div><!-- Property information end -->
 
 
-
-      <div id="{{ $index }}-more-info-box" class="more-info-box">
+      <div  id="{{ $index }}-more-info-box" class="more-info-box">
         <div id="{{ $index }}-map" class="map">
         </div>
-        <div class="amenities-title">
-          <p>Amenities</p>
-        </div>
-
-        <div class="ui three column grid amenities-list">
-          <div class="column">
-            <ul>
-              <li ng-repeat="i in [0,1,2]" ng-show="p.amenities[i] != null">{{ p.amenities[i] }}</li>
-            </ul>
+        <div style="width:60%; height:170px; min-width:10px; float:right;">
+          <div class="amenities-title">
+            <p>Amenities</p>
           </div>
 
-          <div class="column">
-            <ul>
-              <li ng-repeat="i in [3,4,5]" ng-show="p.amenities[i] != null">{{ p.amenities[i] }}</li>
-            </ul>
-          </div>
+          <div class="ui three column grid amenities-list">
+            <div class="column">
+              <ul>
+                <li ng-repeat="i in [0,1,2]" ng-show="p.amenities[i] != null">{{ p.amenities[i] }}</li>
+              </ul>
+            </div>
 
-          <div class="column">
-            <ul>
-              <li ng-repeat="i in [6,7,8]" ng-show="p.amenities[i] != null">{{ p.amenities[i] }}</li>
-            </ul>
+            <div class="column">
+              <ul>
+                <li ng-repeat="i in [3,4,5]" ng-show="p.amenities[i] != null">{{ p.amenities[i] }}</li>
+              </ul>
+            </div>
+
+            <div class="column">
+              <ul>
+                <li ng-repeat="i in [6,7,8]" ng-show="p.amenities[i] != null">{{ p.amenities[i] }}</li>
+              </ul>
+            </div>
           </div>
-        </div>                  
+        </div> 
+      </div>
+
+
+      <div  style="display:none;">                 
       </div>
     </div><!-- Search Result Box -->
