@@ -766,8 +766,7 @@ angular.module('App')
 	$http, 
 	$interval, 
 	$timeout,
-	urlChanger,
-	$filter
+	urlChanger
 ){
 	// ----------------------------------------------------------------
 	var url = window.location.href;
@@ -1059,7 +1058,6 @@ angular.module('App')
 			newArray.sort(function(a, b){return b['recalculated'] - a['recalculated']});
 		});
 		$scope.properties = newArray;
-
 	}
 
 	$scope.reArrange = function(){
