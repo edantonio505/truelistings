@@ -919,6 +919,8 @@ angular.module('App')
 
 	// Get the results from the initial search
 	$scope.init = function(){
+		var $grid = $('.grid');
+		$grid.masonry('destroy');
 		var elementsCount = 0;
 		var time = 0;
 		$http.get(url)
@@ -947,6 +949,10 @@ angular.module('App')
 			$timeout(function(){
 				$("#spinner").fadeOut();
 			}, time);
+
+			$timeout(function(){
+				$grid.masonry();
+			}, 1000);
 		});
 	};
 
