@@ -11617,7 +11617,7 @@ input[type=text]:focus, select :focus, input[type="email"]:focus, input[type="pa
 	margin-top:5px;
 }
 .top-bar-right {
-	margin-right:50px;
+	margin-right:40px;
 	position:relative;
 	top: -7px;
 }
@@ -11630,7 +11630,7 @@ input[type=text]:focus, select :focus, input[type="email"]:focus, input[type="pa
 .top-bar-left {
 	margin-left:50px;
 	position: relative;
-	top: -5px;
+	top: -2px;
 }
 
 .menu.transition {
