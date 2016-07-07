@@ -848,7 +848,6 @@ angular.module('App')
 
 
 	$scope.getColor = function(match, calculated, amenities) {
-
 		if($scope.buttonFilterSelected == false)
 		{
 			current = match;
@@ -894,7 +893,7 @@ angular.module('App')
 		        fillOpacity: 0.35,
 		        map: map,
 		        center: {lat: Number(l[0]), lng: Number(l[1])},
-		        radius: 700
+		        radius: 600
 		    });
 
 		    google.maps.event.addListenerOnce(map, 'idle', function() {
