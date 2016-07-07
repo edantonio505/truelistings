@@ -350,8 +350,7 @@
 .basic-info-grid .column p {
   position: relative;
   top: -2px;
-  display: inline;
-  font-size: 70% !important; }
+  display: inline; }
 
 .basic-info-grid .column span {
   font-size: 70%;
