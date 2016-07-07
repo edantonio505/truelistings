@@ -51,6 +51,19 @@ angular.module('App', [
           controller: 'SearchCtrl'
         }
       }
+    })
+    /*------------------------
+      Agent Profile
+    -------------------------*/
+    .state('root.agent-profile', {
+      url: "/agent-profile/:id",
+      data: {pageTitle: "Agents profile"},
+      views: {
+        'container': {
+          templateUrl: 'views/pages/agent-profile.html',
+          controller: 'AgentProfileCtrl'
+        }
+      }
     });
 
 

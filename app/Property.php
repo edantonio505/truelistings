@@ -391,6 +391,22 @@ class Property extends Model
         {
             $properties = [];
         }
+        return $this->getResultUser($properties);
+    }
+
+    private function getResultUser($p)
+    {
+        foreach($p as $property)
+        {   
+            $user = User::findOrFail($property['_source']['user_id']);
+            $property['user']['user_name'] = $user->name;
+            $property['user']['avatar'] = $user->getAvatarListUrl();
+            $properties[] = $property;
+        }
+         if(!isset($properties))
+        {
+            $properties = [];
+        }
         return $properties;
     }
     // -----------------------------------------Check if it has Selling Points-------------------------

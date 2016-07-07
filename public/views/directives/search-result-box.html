@@ -63,9 +63,9 @@
             <div class="agent-info-results">
 
               <div class="agent-profile-container">
-                  <div class="agent-picture"></div>
-                  <h5>Itay Gamlieli</h5>
-                  <button class="ui blue button">Contact Now</button>
+                  <img ng-src="{{ p.user.avatar }}" class="agent-picture">
+                  <h5>{{ p.user.user_name }}</h5>
+                  <button ui-sref="root.agent-profile({id: p._source.user_id })" class="ui blue button">Contact Now</button>
               </div>
             </div>
         </div>

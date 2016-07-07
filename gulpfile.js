@@ -51,6 +51,7 @@ elixir(function(mix) {
         'controllers/mainController.js',
         'controllers/homeController.js',
         'controllers/searchController.js',
+        'controllers/agentProfileController.js',
         // ----------------------------
 
         // services--------------------

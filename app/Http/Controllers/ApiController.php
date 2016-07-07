@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\User;
 use App\Property;
 use App\Neighborhood;
 use App\Helpers\PropertyDetails;
@@ -48,13 +49,16 @@ class ApiController extends Controller
 
 
 
-    private function details($type)
+   
+    public function getUserInfo($id)
     {
-        $d = new PropertyDetails();
-        $details = ($type == 1 ? $d->sellingPoints : $d->amenities);
-        return $details;
-    }
+        $u = User::findOrFail($id);
 
+        $user['name'] = $u->name;
+        $user['email'] = $u->email;
+        $user['avatar'] = $u->getAvatarProfileUrl();
+        return response()->json(['user' => $user]);
+    }
 
 
     // ------------------------------Paginator--------------------------
@@ -76,5 +80,12 @@ class ApiController extends Controller
 
         //Create our paginator and pass it to the view
         return new LengthAwarePaginator($currentPageItems, count($items), $perPage);
+    }
+
+     private function details($type)
+    {
+        $d = new PropertyDetails();
+        $details = ($type == 1 ? $d->sellingPoints : $d->amenities);
+        return $details;
     }
 }

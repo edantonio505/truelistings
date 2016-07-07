@@ -619,6 +619,19 @@ angular.module('App', [
           controller: 'SearchCtrl'
         }
       }
+    })
+    /*------------------------
+      Agent Profile
+    -------------------------*/
+    .state('root.agent-profile', {
+      url: "/agent-profile/:id",
+      data: {pageTitle: "Agents profile"},
+      views: {
+        'container': {
+          templateUrl: 'views/pages/agent-profile.html',
+          controller: 'AgentProfileCtrl'
+        }
+      }
     });
 
 
@@ -1130,6 +1143,16 @@ angular.module('App')
 	}
 
 	$scope.init();
+
+});
+angular.module('App')
+.controller('AgentProfileCtrl', function($scope, $http, API, $stateParams){
+	$http.get(API+'user-info/'+$stateParams.id)
+	.success(function(data){
+		$scope.name = data.user.name;
+		$scope.email = data.user.email;
+		$scope.avatar = data.user.avatar;
+	});
 
 });
 angular.module('App')

@@ -1,0 +1,117 @@
+/* line 1, ../sass/layout/_header.scss */
+body {
+  margin: 0px;
+
+}
+/* line 4, ../sass/layout/_header.scss */
+body header {
+  height: 42px;
+}
+/* line 7, ../sass/layout/_header.scss */
+body header .header-outter-container {
+  height: 42px;
+  width: 100%;
+  background-color: $blue;
+  position: fixed;
+  z-index: 9999;
+  font-family: 'Lato', sans-serif;
+}
+/* line 16, ../sass/layout/_header.scss */
+body header .header-outter-container .header .logo {
+  padding: 2px 0px;
+  float: left;
+  margin-left: 43px;
+  margin-top: 3px;
+}
+/* line 21, ../sass/layout/_header.scss */
+body header .header-outter-container .header .logo img {
+  width: 146px;
+}
+
+.logo img:hover {
+  cursor:pointer;
+}
+/* line 26, ../sass/layout/_header.scss */
+body header .header-outter-container .header .right-components {
+  float: right;
+  color: #FFF;
+  margin-right: 21px;
+}
+/* line 31, ../sass/layout/_header.scss */
+body header .header-outter-container .header .right-components .notifications {
+  float: left;
+  font-size: 24px;
+  padding-top: 5px;
+  padding-right: 21px;
+  position: relative;
+}
+/* line 38, ../sass/layout/_header.scss */
+body header .header-outter-container .header .right-components .notifications .quantity {
+  position: absolute;
+  border-radius: 50%;
+  height: 18px;
+  width: 18px;
+  background-color: #FF0000;
+  top: 1px;
+  right: 14px;
+  font-size: 13px;
+  text-align: center;
+  font-weight: bold;
+}
+/* line 51, ../sass/layout/_header.scss */
+body header .header-outter-container .header .right-components .notifications .menu {
+  margin-top: 0px !important;
+  min-width: 200px !important;
+}
+/* line 55, ../sass/layout/_header.scss */
+body header .header-outter-container .header .right-components .notifications .menu::after {
+  display: none !important;
+}
+/* line 59, ../sass/layout/_header.scss */
+body header .header-outter-container .header .right-components .notifications .menu .header {
+  font-size: 14px;
+  font-weight: normal;
+}
+/* line 63, ../sass/layout/_header.scss */
+body header .header-outter-container .header .right-components .notifications .menu .header i {
+  float: right;
+  cursor: pointer;
+}
+/* line 69, ../sass/layout/_header.scss */
+body header .header-outter-container .header .right-components .notifications .menu .see-all {
+  color: #1d82aa;
+  font-size: 13px;
+  text-align: center;
+  cursor: pointer;
+  padding-bottom: 11px;
+}
+/* line 79, ../sass/layout/_header.scss */
+body header .header-outter-container .header .right-components .user-container {
+  float: left;
+}
+/* line 82, ../sass/layout/_header.scss */
+body header .header-outter-container .header .right-components .user-container .image-container {
+  float: left;
+  height: 30px;
+  width: 30px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 6px 0px;
+  margin-right: 10px;
+}
+/* line 91, ../sass/layout/_header.scss */
+body header .header-outter-container .header .right-components .user-container .image-container img {
+  width: 100%;
+}
+/* line 96, ../sass/layout/_header.scss */
+body header .header-outter-container .header .right-components .user-container .user-name {
+  float: left;
+  margin: 11.5px 0px;
+}
+/* line 101, ../sass/layout/_header.scss */
+// body header .header-outter-container .header .right-components .user-container.ui.dropdown .menu > .item {
+//   font-size: 13px;
+// }
+.menu .item {
+  font-size: 14px !important;
+}

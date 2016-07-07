@@ -63,4 +63,5 @@ Route::group(['middleware' => 'web'], function () {
 Route::group(['prefix' => 'api/v1'], function () {
     Route::get('home', 'ApiController@home');
     Route::get('search', 'ApiController@search');
+    Route::get('user-info/{id}', 'ApiController@getUserInfo');
 });

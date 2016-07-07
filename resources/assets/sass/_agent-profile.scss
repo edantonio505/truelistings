@@ -1,0 +1,156 @@
+.agent-profile {
+  font-family: 'Lato', sans-serif;
+ .agent-profile-container {
+   .agent-profile-inner-container {
+    margin-top: 40px;
+
+     .left-profile {
+       margin-left: 250px;
+       float: left;
+     }
+
+     .right-profile {
+       float: right;
+     }
+
+     .profile-top-container {
+       margin-bottom: 15px;
+       height: 121px;
+       background-color: #d7ecf3;
+
+       .profile-top-inner-container {
+         max-width: 1160px;
+         margin: 0 auto;
+         padding-top: 62px;
+
+         .left-profile {
+           color: $main-green-color;
+
+           .brand {
+             font-size: 12px;
+           }
+
+           .name {
+             font-size: 30px;
+             line-height: 30px;
+             font-weight: bold;
+           }
+         }
+
+         .right-profile {
+           padding-top: 22px;
+
+           .social-networks-container {
+             .social-network {
+               float: left;
+               border: 1px solid #fff;
+               border-radius: 50%;
+               height: 25px;
+               width: 25px;
+               text-align: center;
+               display: table;
+               margin: 0px 5px;
+               cursor: pointer;
+               color: $blue;
+
+               i {
+                 display: table-cell;
+                 vertical-align: middle;
+               }
+             }
+           }
+         }
+       }
+     }
+
+     .profile-bottom-container {
+       background: $main-green-color;
+       position: relative;
+       max-width: 1160px;
+       margin: 0 auto;
+
+       .image-profile-container {
+         border-radius: 50%;
+         height: 206px;
+         width: 206px;
+         border: 3px solid #fff;
+         position: absolute;
+         bottom: -10px;
+         left: 27px;
+
+         .image-profile-inner-container {
+           border-radius: 50%;
+           overflow: hidden;
+           height: 200px;
+           width: 200px;
+           position: absolute;
+           left: 0px;
+           top: 0px;
+
+           img {
+             width: 100%;
+           }
+         }
+       }
+
+       .left-profile {
+
+         .contact-agent-button {
+           float: left;
+           text-align: center;
+           margin: 23px auto;
+           background: #d9eff7;
+           border-radius: 2px;
+           color: #545454;
+           text-transform: uppercase;
+           padding: 7px 37px;
+           max-width: 296px;
+           font-size: 18px;
+           text-decoration: none !important;
+
+         }
+
+         .contact-agent-button a:hover {
+           text-decoration: none !important;
+         }
+
+         .data-container {
+           float: left;
+           color: #fff;
+           margin-left: 30px;
+           padding: 25px 0px;
+           font-weight: bold;
+
+           .email {
+
+           }
+
+           .phone-number {
+
+           }
+         }
+       }
+
+       .right-profile {
+         .action-button {
+           border: 1px solid #fff;
+           border-radius: 2px;
+           color: #fff;
+           text-transform: capitalize;
+           width: 105px;
+           text-align: center;
+           padding: 6px 0px;
+           margin: 28px 20px;
+           font-size: 17px;
+           float: left;
+           cursor: pointer;
+
+           i {
+             margin-right: 3px;
+           }
+         }
+       }
+     }
+   }
+ }
+}
