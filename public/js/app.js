@@ -1017,12 +1017,13 @@ angular.module('App')
 
 
 	$scope.getNewResults = function(param, value){
+		$("#spinner2").fadeIn();
 		var $grid = $('.grid');
 		$grid.masonry('destroy');
 		var newurl = urlChanger.change(document.URL, param, value);
 		var elementsCount = 0;
 		var time = 0;
-		$("#spinner2").fadeIn();
+		
 		$http.get(newurl)
 		.success(function(data){
 			$scope.properties = data.properties.data;
