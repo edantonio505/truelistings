@@ -45,6 +45,7 @@ angular.module('App')
 	    windowBottom = windowHeight + window.pageYOffset;
 	    if (windowBottom >= docHeight) {
 	    	if($scope.nextPage != null){
+	    		$('#loading-spinner').fadeIn();
 		        $http.get($scope.nextPage).
 		        success(function(data){
 	        		$scope.nextPage = data.properties.next_page_url;
@@ -52,6 +53,7 @@ angular.module('App')
 	        		angular.forEach(data.properties.data, function(value, key){
 	        			$scope.properties.push(value);
 	        		});
+	        		$('#loading-spinner').fadeOut();
 		        });
 	        }
 	    }
