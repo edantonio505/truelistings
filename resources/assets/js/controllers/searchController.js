@@ -88,7 +88,6 @@ angular.module('App')
 
 
 	$scope.getColor = function(match, calculated, amenities) {
-
 		if($scope.buttonFilterSelected == false)
 		{
 			current = match;
