@@ -21,7 +21,17 @@ $red: #ff5b4d;
   left:0;
   width: 100%;
   height: 100%;
-  background-color:white; z-index:100; overflow: hidden;
+  background-color:white; 
+  z-index:100; 
+  overflow: hidden;
+}
+
+#spinner img {
+  position:absolute; 
+  top: 40%; 
+  left:40%; 
+  height: 200px; 
+  width:auto;
 }
 
 .amenities-filter-button {
@@ -42,13 +52,7 @@ $red: #ff5b4d;
   color: white;
 }
 
-#spinner img {
-  position:absolute; 
-  top: 40%; 
-  left:40%; 
-  height: 200px; 
-  width:auto;
-}
+
 
 .wish-list {
   height: 210px; 
@@ -166,7 +170,11 @@ $red: #ff5b4d;
   left:323px;
   width: 100%;
   height: 100%;
-  background-color:white; z-index:100; overflow: hidden; display:none;
+  background-color:white; 
+  z-index:100; 
+  overflow: hidden; 
+  display:none;
+  opacity:0.8;
 }
 
 @media(min-width: 1700px)
