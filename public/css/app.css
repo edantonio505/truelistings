@@ -319,7 +319,8 @@
   font-size: 13px;
   color: #535d6c;
   outline: none;
-  height: 20px !important; }
+  height: 20px !important;
+  border-color: white !important; }
 
 .wishes-options .heart {
   background-image: url("../../images/heart.svg");
