@@ -87,8 +87,13 @@
   width: 75%;
   float: left;
   padding: 15px;
-  background-color: #f7f7f7;
   overflow: hidden !important; }
+
+#background-container-search {
+  background-color: #f7f7f7;
+  width: 100%;
+  height: auto;
+  position: absolute; }
 
 .result-box-list {
   width: 50% !important;
