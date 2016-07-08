@@ -58,24 +58,27 @@
                 <div class="title-bar">
                   <p class="wish-title">I woud like to live in...</p>
                 </div>
-                
-                <div class="ui selection dropdown">
-                  <input type="hidden" name="location">
-                  <i class="dropdown icon"></i>
-                  <div class="text">{{ location }}</div>
-                  <div class="menu">
-                    <div class="item" ng-click="newLocation(n)" ng-repeat="n in neighborhoods">
-                      {{ n }}
+                <div style="width:100%; background-color:#414141;">
+                  <div class="ui selection dropdown">
+                    <input type="hidden" name="location">
+                    <i class="dropdown icon"></i>
+                    <div class="text">{{ location }}</div>
+                    <div class="menu">
+                      <div class="item" ng-click="newLocation(n)" ng-repeat="n in neighborhoods">
+                        {{ n }}
+                      </div>
                     </div>
                   </div>
                 </div>
+                
 
                 <div class="title-bar">
                   <p class="wish-title">My Budget is between</p>
                 </div>
-            
-                $<input type="number" ng-change="updateValue(min, 'min')" ng-model-options="{debounce: 600}" ng-model="min" id="min">&nbsp;&nbsp;$<input ng-change="updateValue(max, 'max')" ng-model-options="{debounce: 600}" type="number" ng-model="max" id="max">
-
+                <div style="width:100%; background-color:#414141; color:white;">
+                  $<input type="number" ng-change="updateValue(min, 'min')" ng-model-options="{debounce: 600}" ng-model="min" id="min">&nbsp;&nbsp;$<input ng-change="updateValue(max, 'max')" ng-model-options="{debounce: 600}" type="number" ng-model="max" id="max">
+                </div>
+                
                 <div class="title-bar">
                   <p class="wish-title">Number of Bedrooms</p>
                 </div>

@@ -53,7 +53,6 @@ class ApiController extends Controller
     public function getUserInfo($id)
     {
         $u = User::findOrFail($id);
-
         $user['name'] = $u->name;
         $user['email'] = $u->email;
         $user['avatar'] = $u->getAvatarProfileUrl();

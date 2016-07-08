@@ -3,9 +3,10 @@ $border-color: #dbdbdb;
 $box-grey: #e9ebee;
 $box-text: #535d6c;
 $error: #ff9a9a;
-$box-shadow-color: #e8e8e8;
+$box-shadow-color: #e1e1e1;
 $red: #ff5b4d;
-$main-green-color: #1a8dd8;
+$green: #d7ecf3;
+$settling-grey: #f7f7f7;
 
 /* -------------------------
   Search Result Item
@@ -36,12 +37,13 @@ $main-green-color: #1a8dd8;
 }
 
 .amenities-filter-button {
-  height: 17px;
+  height: 22px;
   width: 100%;
   padding: 0px;
   margin: 0px;
   border: 0px none transparent;
   background-color: transparent;
+  outline: none;
 }
 
 .amenities-filter-button:hover {
@@ -51,6 +53,7 @@ $main-green-color: #1a8dd8;
 .amenities-filter-button.selected {
   background-color: $blue;
   color: white;
+  outline: none;
 }
 
 
@@ -101,12 +104,14 @@ $main-green-color: #1a8dd8;
 
 .box2 {
  position:relative;
- height: auto;
- min-height: 600px;
+ height: 100%;
+ min-height: 630px;
  min-width: 10px;
  width:75%;
  float: left;
  padding:15px;
+ background-color: $settling-grey;
+ overflow: hidden !important;
 }
 
 .result-box-list {
@@ -156,8 +161,8 @@ $main-green-color: #1a8dd8;
   background-color: $box-grey;
   position: fixed;
   max-width: 320px;
-  border-right: 1px solid $border-color; 
-  box-shadow: 1px 1px 15px 0px $box-shadow-color;
+  // border-right: 1px solid $border-color; 
+  // box-shadow: 1px 1px 15px 0px $box-shadow-color;
   text-align: center;
   color: $box-text;
   font-family: 'Lato', sans-serif;
@@ -211,9 +216,11 @@ $main-green-color: #1a8dd8;
 }
 
 .wishes-options td {
-  padding: 2px !important;
+  padding: 0px !important;
   font-size: 13px; 
   color: $box-text;
+  outline: none;
+  height: 20px !important;
 }
 
 
@@ -235,8 +242,14 @@ $main-green-color: #1a8dd8;
   width: 100%; 
   min-height: 10px; 
   height: 100%; 
-  background-color:white;
+  background-color:$green;
   margin-top: 10px;
+  color: $blue;
+}
+
+.search-filter-options .ui.basic.buttons {
+  border-color: $blue !important;
+  border-radius: 0px !important;
 }
 
 .search-filter-options .button {
@@ -246,19 +259,33 @@ $main-green-color: #1a8dd8;
   font-size: 13px !important;
   padding-left: 15px !important;
   padding-right: 15px !important;
+  border-color: transparent !important;
 }
+
+.search-filter-options .ui.basic.buttons .button {
+  color: white !important;
+  background-color: #414141 !important;
+  border-radius: 0px !important;
+  font-weight: 400 !important;
+}
+
+.search-filter-options .ui.basic.buttons .active.button {
+  background-color: $blue !important;
+  color: white !important;
+} 
 
 .search-filter-options .dropdown {
   border: 0px none transparent !important;
   padding-bottom: 10px !important;
-  height: 0px !important;
   margin:0px !important;
-  color: $box-text;
+  color: white;
   min-height: 30px !important;
+  background-color: #414141 !important; 
 }
 
 .search-filter-options .table {
   margin-top: 5px !important;
+  background-color: $green;
 }
 
 .search-filter-options table {
@@ -266,8 +293,8 @@ $main-green-color: #1a8dd8;
 }
 
 .search-filter-options .text {
-  color: $box-text !important;
-  font-size: 15px !important; 
+  color: white !important;
+  font-size: 17px !important; 
 }
 
 
@@ -280,9 +307,10 @@ $main-green-color: #1a8dd8;
   outline: none;
   border: 0px none transparent;
   width: 90px;
-  font-size: 15px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  font-size: 18px;
+  background-color: #414141;
+  color:white;
+  height:30px;
 }
 
 .search-filter-options #min {
@@ -301,20 +329,6 @@ $main-green-color: #1a8dd8;
   color: #939dac;
 }
 
-.search-filter-options .wish-title {
-  font-size: 13px;
-  margin-bottom: 10px !important;
-  padding-top: 2px;
-  text-transform: uppercase;
-  color: $blue;
-}
-
-.search-filter-options .title-bar {
-  border-top: 1px solid white;
-  height: 25px;
-  background-color: #d7ecf3;
-}
-
 .wishes-options .sixteen.wide.column {
   padding: 0px !important;
   height: 60px !important;
@@ -325,6 +339,22 @@ $main-green-color: #1a8dd8;
   background-color:  transparent;
 }
 
+
+// --------Search Filter----------------
+.search-filter-options .wish-title {
+  margin-bottom: 10px !important;
+  padding-top: 2px;
+  color: white;
+}
+
+.search-filter-options .title-bar {
+  height: 25px;
+  background-color: $blue;
+}
+// ------------------------------
+
+
+
 .angular-google-map-container { height: 200px; }
 
 .search-result-box {
@@ -332,11 +362,12 @@ $main-green-color: #1a8dd8;
   height: auto; 
   min-width: 10px; 
   width: 100%; 
-  border:1px solid $border-color; 
+  // border:1px solid $border-color; 
   border-radius: 5px;
-  box-shadow: 1px 1px 15px 0px $box-shadow-color;
+  box-shadow: 2px 2px 4px 0px $box-shadow-color;
   font-family: 'Lato', sans-serif;
   color: $box-text;
+  background-color: white;
 }
 
 .result-image {
@@ -410,13 +441,12 @@ $main-green-color: #1a8dd8;
 .result-wishes-title {
   height:20px; 
   width:100px; 
-  background-color: $blue; 
+  background-color: $green; 
   margin-top: 10px;
   border-radius: 0px 3px 3px 0px;
 }
 
 .result-wishes-title p {
-  color: white;
   position: relative;
   left: 3px;
 }
@@ -459,6 +489,7 @@ $main-green-color: #1a8dd8;
 
 .agent-profile-container .ui.blue.button {
   font-size: 70% !important;
+  background-color: #17bb5d !important;
 }
 
 .agent-profile-container h5 {
@@ -571,7 +602,7 @@ $main-green-color: #1a8dd8;
   position: relative; 
   left:-20px; 
   top:-20px; 
-  border:5px solid white; 
+  border:5px solid $settling-grey; 
   background-color:$box-grey;
 }
 
@@ -590,9 +621,6 @@ $main-green-color: #1a8dd8;
     Helpers for Slick
 ----------------------------*/
 /* line 5, ../sass/_helpers.scss */
-.slider {
-  position: relative;
-}
 
 .ui.grid {
   margin:0px;
@@ -757,3 +785,4 @@ $main-green-color: #1a8dd8;
 @import "agent-profile.scss";
 @import "header.scss";
 @import "home.scss";
+@import "property.scss";

@@ -2,7 +2,8 @@ angular.module('App', [
   'ui.router',
   'ngPageTitle',
   'angular-svg-round-progressbar',
-  'wu.masonry'
+  'wu.masonry',
+  'slick'
 ])
 
 /*--------------------------
@@ -52,16 +53,33 @@ angular.module('App', [
         }
       }
     })
+
+
     /*------------------------
       Agent Profile
     -------------------------*/
     .state('root.agent-profile', {
       url: "/agent-profile/:id",
-      data: {pageTitle: "Agents profile"},
+      data: {pageTitle: "Agent profile"},
       views: {
         'container': {
           templateUrl: 'views/pages/agent-profile.html',
           controller: 'AgentProfileCtrl'
+        }
+      }
+    })
+
+    
+    /*------------------------
+      Property Details
+    -------------------------*/
+    .state('root.property', {
+      url: "/property/:id",
+      data: {pageTitle: "Property Details"},
+      views: {
+        'container': {
+          templateUrl: 'views/pages/property.html',
+          controller: 'PropertyCtrl'
         }
       }
     });

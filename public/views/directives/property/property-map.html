@@ -1,0 +1,14 @@
+<div class="map-container">
+    <div class="map-tabs-container clearfix">
+        <div
+            class="tab-item"
+            ng-class="{ active:isActiveTab('map') }"
+            ng-click="onClickTab('map')">Map</div>
+        <div
+            class="tab-item"
+            ng-class="{ active:isActiveTab('schools') }"
+            ng-click="onClickTab('schools')">Schools</div>
+    </div>
+    <ui-gmap-google-map control="map.control" options="map.options" center='map.center' zoom='map.zoom' ng-if="currentTab === 'map'"></ui-gmap-google-map>
+    <ui-gmap-google-map control="map.control" options="map.options" center='map.center' zoom='map.zoom' ng-if="currentTab === 'schools'"></ui-gmap-google-map>
+</div>

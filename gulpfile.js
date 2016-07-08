@@ -39,6 +39,8 @@ elixir(function(mix) {
         base+'imagesloaded/imagesloaded.pkgd.min.js',
         base+'masonry/dist/masonry.pkgd.min.js',
         base+'angular-masonry/angular-masonry.js',
+        base+'slick-carousel/slick/slick.min.js',
+        base+'angular-slick/dist/slick.min.js',
         // ----------------------------
 
 
@@ -52,6 +54,7 @@ elixir(function(mix) {
         'controllers/homeController.js',
         'controllers/searchController.js',
         'controllers/agentProfileController.js',
+        'controllers/propertyController.js',
         // ----------------------------
 
         // services--------------------
@@ -64,7 +67,22 @@ elixir(function(mix) {
         'directives/wishes-search.js',
         'directives/wishes-search-list.js',
         'directives/search-result-box.js',
-        'directives/wishes.js'
+        'directives/wishes.js',
+
+            /*------------------------
+                Property partials directives
+            --------------------------*/
+            'directives/property/property-amenities.js',
+            'directives/property/property-contact-square.js',
+            'directives/property/property-description.js',
+            'directives/property/property-details.js',
+            'directives/property/property-gallery.js',
+            'directives/property/property-hot-features.js',
+            'directives/property/property-map.js',
+            'directives/property/property-pricing.js',
+            'directives/property/property-sticky-navbar.js',
+            // 
+
         // ----------------------------
 
     ], 'public/js/app.js')
@@ -74,6 +92,7 @@ elixir(function(mix) {
         base+'font-awesome/css/font-awesome.min.css',
         base+'bootstrap/dist/css/bootstrap.min.css',
         base+'jquery-ui/themes/base/jquery-ui.min.css',
+        base+'slick-carousel/slick/slick.css',
         // -----------------------------------
 
 
