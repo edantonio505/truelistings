@@ -61,23 +61,10 @@ class ApiController extends Controller
 
 
     // ------------------------------Paginator--------------------------
-    /**
-     * Create a length aware custom paginator instance.
-     *
-     * @param  Collection  $items
-     * @param  int  $perPage
-     * @return \Illuminate\Pagination\LengthAwarePaginator
-     */
     protected function paginate($items, $perPage = 12)
     {
-        //Get current page form url e.g. &page=1
         $currentPage = LengthAwarePaginator::resolveCurrentPage();
-
-        //Slice the collection to get the items to display in current page
         $currentPageItems = array_slice($items, ($currentPage - 1) * $perPage, $perPage);
-
-
-        //Create our paginator and pass it to the view
         return new LengthAwarePaginator($currentPageItems, count($items), $perPage);
     }
 

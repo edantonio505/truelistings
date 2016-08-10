@@ -36,7 +36,7 @@
   background-color: #e9ebee; }
 
 .amenities-filter-button.selected {
-  background-color: #1a8dd8;
+  background-color: #3f98a4;
   color: white;
   outline: none; }
 
@@ -94,6 +94,7 @@
   width: 100%;
   height: auto;
   min-height: 100%;
+  overflow: hidden;
   position: absolute; }
 
 .result-box-list {
@@ -117,7 +118,7 @@
   top: 232px; }
 
 .blue.button {
-  background-color: #1a8dd8 !important; }
+  background-color: #3f98a4 !important; }
 
 .blue.button:hover {
   background-color: #156faa !important; }
@@ -196,10 +197,10 @@
   height: 100%;
   background-color: #d7ecf3;
   margin-top: 10px;
-  color: #1a8dd8; }
+  color: #3f98a4; }
 
 .search-filter-options .ui.basic.buttons {
-  border-color: #1a8dd8 !important;
+  border-color: #3f98a4 !important;
   border-radius: 0px !important; }
 
 .search-filter-options .button {
@@ -218,7 +219,7 @@
   font-weight: 400 !important; }
 
 .search-filter-options .ui.basic.buttons .active.button {
-  background-color: #1a8dd8 !important;
+  background-color: #3f98a4 !important;
   color: white !important; }
 
 .search-filter-options .dropdown {
@@ -281,7 +282,7 @@
 
 .search-filter-options .title-bar {
   height: 25px;
-  background-color: #1a8dd8; }
+  background-color: #3f98a4; }
 
 .angular-google-map-container {
   height: 200px; }
@@ -508,7 +509,7 @@
   width: 400px !important; }
 
 .wish.heart.icon {
-  color: #1a8dd8;
+  color: #3f98a4;
   font-size: 25px;
   float: left;
   position: relative;
@@ -521,7 +522,7 @@
   left: -10px; }
 
 .wishSelected {
-  color: #1a8dd8 !important; }
+  color: #3f98a4 !important; }
 
 .wish.heart span {
   color: white;
@@ -547,10 +548,10 @@
   font-weight: lighter; }
 
 .wishes-popup-search .column .button:hover {
-  color: #1a8dd8; }
+  color: #3f98a4; }
 
 .wishes-popup .column .button:hover {
-  color: #1a8dd8; }
+  color: #3f98a4; }
 
 .input-box .wide {
   padding-top: 0px !important;
@@ -621,7 +622,7 @@
 
 .ui.blue.progress .bar {
   height: 100%;
-  background-color: #1a8dd8; }
+  background-color: #3f98a4; }
 
 .agent-profile {
   font-family: 'Lato', sans-serif; }
@@ -641,7 +642,7 @@
         margin: 0 auto;
         padding-top: 62px; }
         .agent-profile .agent-profile-container .agent-profile-inner-container .profile-top-container .profile-top-inner-container .left-profile {
-          color: #1a8dd8; }
+          color: #3f98a4; }
           .agent-profile .agent-profile-container .agent-profile-inner-container .profile-top-container .profile-top-inner-container .left-profile .brand {
             font-size: 12px; }
           .agent-profile .agent-profile-container .agent-profile-inner-container .profile-top-container .profile-top-inner-container .left-profile .name {
@@ -660,12 +661,12 @@
             display: table;
             margin: 0px 5px;
             cursor: pointer;
-            color: #1a8dd8; }
+            color: #3f98a4; }
             .agent-profile .agent-profile-container .agent-profile-inner-container .profile-top-container .profile-top-inner-container .right-profile .social-networks-container .social-network i {
               display: table-cell;
               vertical-align: middle; }
     .agent-profile .agent-profile-container .agent-profile-inner-container .profile-bottom-container {
-      background: #1a8dd8;
+      background: #3f98a4;
       position: relative;
       max-width: 1160px;
       margin: 0 auto; }
@@ -734,7 +735,7 @@ body header {
 body header .header-outter-container {
   height: 42px;
   width: 100%;
-  background-color: #1a8dd8;
+  background-color: #3f98a4;
   position: fixed;
   z-index: 9999;
   font-family: 'Lato', sans-serif; }
@@ -975,7 +976,7 @@ input[type=number]::-webkit-outer-spin-button {
 /* line 136, ../sass/pages/_home.scss */
 .homepage .wishes-container .second-title .text span {
   font-style: italic;
-  color: #1a8dd8;
+  color: #3f98a4;
   font-family: 'Lato', sans-serif; }
 
 /* line 141, ../sass/pages/_home.scss */
@@ -1066,7 +1067,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 /* line 240, ../sass/pages/_home.scss */
 .homepage .how-it-works-container {
-  background-color: #1a8dd8;
+  background-color: #3f98a4;
   padding: 30px 0px;
   text-align: center;
   position: relative;
@@ -1204,7 +1205,7 @@ input[type=number]::-webkit-outer-spin-button {
           border-right: none; }
 
 .pricing-owrap {
-  background: #1a8dd8;
+  background: #3f98a4;
   border-radius: 7px 7px 0px 0px; }
   .pricing-owrap .property-header-item {
     font-size: 18px;
@@ -1326,7 +1327,7 @@ input[type=number]::-webkit-outer-spin-button {
     border-bottom: 3px solid #177ec1; }
 
 .contact-square {
-  background: #1a8dd8;
+  background: #3f98a4;
   top: 55px;
   z-index: 10;
   position: fixed; }

@@ -1,4 +1,4 @@
-$blue: #1a8dd8;
+$blue: #3f98a4;
 $border-color: #dbdbdb;
 $box-grey: #e9ebee;
 $box-text: #535d6c;
@@ -118,6 +118,7 @@ $settling-grey: #f7f7f7;
   width: 100%;
   height: auto;
   min-height: 100%;
+  overflow: hidden;
   position:absolute;
 }
 
