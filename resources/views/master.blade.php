@@ -8,7 +8,7 @@
 
 		<link rel="stylesheet" type="text/css" href="{{ elixir('css/app.css') }}">
 		<link href='https://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
-		<script src="https://maps.googleapis.com/maps/api/js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxvq7EwIH7PaulBGlHED2fq0-Yx9zC3lU"></script>
 	</head>
 	<body>
 		<div class="body-front">
